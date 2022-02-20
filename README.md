@@ -11,3 +11,8 @@
 #inpur file analisis atau testing
 #data uji
 #crud katadasar, stopword
+ <?php foreach ($sebaran as $d) {?>
+    var marker = L.marker([<?= $d['latitude'] ?>, <?= $d['longitude'] ?>],{
+        icon:blueIcons
+    }).bindPopup('<b><?= $d['kecamatan'] ?></b><br>').addTo(map);
+<?php }?>

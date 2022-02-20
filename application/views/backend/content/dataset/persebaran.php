@@ -54,7 +54,6 @@
                     });
 
                     var vector_kecamatan = L.layerGroup();
-
                     <?php 
                     foreach ($sebaran as $index => $data) {
                         $warna = ['#e20200', '#f2720d', '#f9eb00', '#03cc3d'];
@@ -72,18 +71,19 @@
                             permanent: true,
                             direction: 'center'
                         }).addTo(vector_kecamatan);
+                        
+                        // 
                     <?php } ?>
-
+                    
                     var map = L.map('map', {
                         center: [-8.2169235, 114.3311312],
-                        zoom: 12,
+                        zoom: 10,
                         layers: [peta1, vector_kecamatan],
                     });
                    
                     var baseMaps = {
                         "Map": peta1,
                     };
-
                     L.control.layers(baseMaps).addTo(map);
                 </script>
             </div>

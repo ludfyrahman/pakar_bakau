@@ -56,7 +56,7 @@ class Site extends CI_Controller { //mengextends CI_Controller
         $total = 0;
         $kategori = 4;
         $tb="kecamatan w  LEFT OUTER JOIN ( SELECT id_kecamatan, id_dataset,jumlah as jum FROM detail_dataset WHERE id_dataset=1 GROUP BY id_kecamatan )md ON md.id_kecamatan = w.id_kecamatan ";
-		$fq="w.id_kecamatan, w.nama_kecamatan as nm, w.geojson, CASE WHEN NOT md.jum IS NULL THEN md.jum ELSE 0 END  AS aek, 0 as x1x2, 0 as powx1x2, 0 as s, 0 as z, '' as krit ";
+		$fq="w.id_kecamatan, w.nama_kecamatan as nm, w.geojson,w.latitude,w.longitude, CASE WHEN NOT md.jum IS NULL THEN md.jum ELSE 0 END  AS aek, 0 as x1x2, 0 as powx1x2, 0 as s, 0 as z, '' as krit ";
 		//init view
 		$retVal="";
 		$renderZ=$this->datamodel->qRead($tb,$fq,"");
@@ -122,7 +122,7 @@ class Site extends CI_Controller { //mengextends CI_Controller
 		$data['sebaran']= [];
 		foreach($renderZ->result_array() as $row)
 		{
-            $data['sebaran'][] = ['kecamatan' => $row['nm'], 'kategori' => $row['krit'], 'jumlah' => $row['aek'], 'geojson' => $row['geojson']];
+            $data['sebaran'][] = ['kecamatan' => $row['nm'], 'kategori' => $row['krit'], 'jumlah' => $row['aek'], 'geojson' => $row['geojson'], 'latitude' => $row['latitude'], 'longitude' => $row['longitude']];
 			
 		}
         
