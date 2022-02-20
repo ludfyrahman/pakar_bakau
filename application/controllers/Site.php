@@ -6,7 +6,9 @@ class Site extends CI_Controller { //mengextends CI_Controller
         // error_reporting(0);
     }
     public function index () {
-        
+		if(isset($_SESSION['userlevel'])){
+			redirect(base_url('dashboard'));
+		}
         $data['title'] = "Login";
         $data['content'] = "login/index";
 		$this->load->view('frontend/index',$data);
@@ -40,8 +42,6 @@ class Site extends CI_Controller { //mengextends CI_Controller
         }
     }
     public function logout(){
-        // session_unset("userid");
-        // session_unset("userlevel");
         session_destroy();
         redirect(base_url());
     }
