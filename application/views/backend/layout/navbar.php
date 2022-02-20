@@ -1,53 +1,48 @@
-<header class="main-header">
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Kelontong</b></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?= Account_Helper::Get('nama') ?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="<?= base_url() ?>assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
-                <p>
-                  <?= Account_Helper::Get('nama') ?>
-                </p>
-              </li>
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <!-- <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div> -->
-                <div class="pull-right">
-                  <a href="<?= base_url('site/logout');?>" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <?php Response_Helper::part('breadcrumb') ?>
+      <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
     </nav>
-  </header>
+    <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+        
+      </div>
+      <ul class="navbar-nav  justify-content-end">
+       
+        <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
+            <div class="sidenav-toggler-inner">
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+              <i class="sidenav-toggler-line bg-white"></i>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item dropdown pe-2 d-flex align-items-center">
+          <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+          </a>
+          <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+            <li class="mb-2">
+              <a class="dropdown-item border-radius-md" href="<?= base_url('site/logout') ?>">
+                <div class="d-flex py-1">
+                  <div class="my-auto">
+                    <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
+                  </div>
+                  &nbsp;
+                  <div class="d-flex flex-column justify-content-center">
+                    <h6 class="text-sm font-weight-normal mb-1">
+                      <span class="font-weight-bold">Keluar </span> dari Aplikasi
+                    </h6>
+                    
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

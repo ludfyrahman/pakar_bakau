@@ -9,20 +9,20 @@ class Dashboard extends CI_Controller
     {
 
         $now            = date("Y-m-d");
-        $data           = $this->db->get('training')->result();
+        $data           = $this->db->get('dataset')->result();
         $ras            = 0;
         $agama          = 0;
         $netral         = 0;
-        foreach ($data as $v) {
-            if($v->class == '1'){
-                $netral++;
-            }else if($v->class == '2'){
-                $ras++;
-            }else if($v->class == '3'){
-                $agama++;
-            }
-        }
-        $data['uji']    = $this->db->get_where('uji')->num_rows();
+        // foreach ($data as $v) {
+        //     if($v->class == '1'){
+        //         $netral++;
+        //     }else if($v->class == '2'){
+        //         $ras++;
+        //     }else if($v->class == '3'){
+        //         $agama++;
+        //     }
+        // }
+        $data['uji']    = $this->db->get_where('dataset')->num_rows();
         $data['ras']    = $ras;
         $data['agama']  = $agama;
         $data['netral'] = $netral;

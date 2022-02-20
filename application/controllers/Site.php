@@ -17,17 +17,12 @@ class Site extends CI_Controller { //mengextends CI_Controller
         try {
             if($d){
                 $a = $this->db->get_where("pengguna", ['username' => $d['username']])->result_array();
-
+                // print_r($a);
                 if(count($a) < 1) {
                     $this->session->set_flashdata("message", ['danger', 'Login gagal, silahkan cek username anda kembali', ' Gagal']);
                     return $this->index();
                 }
-
                 $a = $a[0];
-                if($a['status'] == 0) {
-                    $this->session->set_flashdata("message", ['danger', 'Login gagal, Akun anda sedang dinonaktifkan', ' Gagal']);
-                    return $this->index();
-                }
                 if(md5($d['password']) != $a['password']) {
                     $this->session->set_flashdata("message", ['danger', 'Login gagal, Password anda salah', ' Gagal']);
                     return $this->index();

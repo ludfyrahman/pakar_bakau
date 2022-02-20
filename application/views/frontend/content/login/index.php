@@ -10,12 +10,13 @@
                   <p class="mb-0">Enter your email and password to sign in</p>
                 </div>
                 <div class="card-body">
+                <?php Response_Helper::part('alert') ?>
                 <form action="<?= base_url("site/doLogin") ?>" method="POST">
                     <div class="mb-3">
-                      <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username">
+                      <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" aria-label="Username">
                     </div>
                     <div class="mb-3">
-                      <input type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
+                      <input type="password" class="form-control form-control-lg" name="password" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="text-center">
                       <button type="submit" class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">Sign in</button>

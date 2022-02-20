@@ -1,72 +1,51 @@
-<div id="sidebar" class="active">
-            <div class="sidebar-wrapper active">
-                <div class="sidebar-header">
-                    <div class="d-flex justify-content-between">
-                        <div class="logo">
-                            <a href="index.html"><img src="<?= base_url() ?>assets/images/logo/logo.png" alt="Logo" style="width:200px!important" srcset=""></a>
-                        </div>
-                        <div class="toggler">
-                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <!-- <li class="sidebar-title">Menu</li> -->
-
-                        <li class="sidebar-item <?= (in_array($this->uri->segment(1), array('dashboard')) == true ? 'active' : '')?> ">
-                            <a href="<?= base_url('dashboard') ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <!-- <li class="sidebar-title">Master</li> -->
-
-                        <li class="sidebar-item  <?= (in_array($this->uri->segment(1), array('pengguna')) == true ? 'active' : '')?>">
-                            <a href="<?= base_url('pengguna') ?>" class='sidebar-link'>
-                                <i class="bi bi-chat-dots-fill"></i>
-                                <span>Pengguna</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  <?= (in_array($this->uri->segment(1), array('training')) == true ? 'active' : '')?>">
-                            <a href="<?= base_url('training') ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Data Latih</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  <?= (in_array($this->uri->segment(1), array('testing')) == true ? 'active' : '')?>">
-                            <a href="<?= base_url('testing/add') ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Testing</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  <?= (in_array($this->uri->segment(1), array('uji')) == true ? 'active' : '')?>">
-                            <a href="<?= base_url('uji') ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Data Uji</span>
-                            </a>
-                        </li>
-                        <!-- <li class="sidebar-item  <?= (in_array($this->uri->segment(1), array('training')) == true ? 'active' : '')?>">
-                            <a href="<?= base_url('training') ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>Normalisasi</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item  <?= (in_array($this->uri->segment(1), array('training')) == true ? 'active' : '')?>">
-                            <a href="<?= base_url('training') ?>" class='sidebar-link'>
-                                <i class="bi bi-grid-1x2-fill"></i>
-                                <span>StopWord</span>
-                            </a>
-                        </li> -->
-                        <li class="sidebar-item ">
-                            <a href="<?= base_url('site/logout') ?>" class='sidebar-link'>
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
-
-                    </ul>
-                </div>
-                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+      <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+      <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
+        <img src="<?= base_url() ?>assets/img/logo-ct-dark.png" class="navbar-brand-img h-100" alt="main_logo">
+        <span class="ms-1 font-weight-bold">Sistem WebGis</span>
+      </a>
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link " href="<?= base_url("dashboard") ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
             </div>
+            <span class="nav-link-text ms-1">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="<?= base_url("pengguna") ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Pengguna</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="<?= base_url('dataset') ?>">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Dataset</span>
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+    <div class="sidenav-footer mx-3 ">
+      <div class="card card-plain shadow-none" id="sidenavCard">
+        <img class="w-50 mx-auto" src="<?= base_url() ?>assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
+        <div class="card-body text-center p-3 w-100 pt-0">
+          <div class="docs-info">
+            <h6 class="mb-0">Prediksi Tuberkulosis</h6>
+            <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
+          </div>
         </div>
+      </div>
+      
+    </div>
+  </aside>
