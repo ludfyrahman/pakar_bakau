@@ -11,8 +11,15 @@
 #inpur file analisis atau testing
 #data uji
 #crud katadasar, stopword
- <?php foreach ($sebaran as $d) {?>
+<?php foreach ($sebaran as $d) {?>
     var marker = L.marker([<?= $d['latitude'] ?>, <?= $d['longitude'] ?>],{
         icon:blueIcons
-    }).bindPopup('<b><?= $d['kecamatan'] ?></b><br>').addTo(map);
+    }).bindPopup('<b><?= $d['kecamatan'] ?>: <?= $d['jumlah'] ?> kasus</b><br>').addTo(map);
 <?php }?>
+ var blueIcons = new L.icon({
+                        iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                        iconSize:[25, 41],
+                        iconAnchor:[12,41],
+                        popupAnchor:[1,-34],
+                        shadowSize:[41,41]
+                    })

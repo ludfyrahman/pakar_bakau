@@ -54,6 +54,7 @@
                     });
 
                     var vector_kecamatan = L.layerGroup();
+
                     <?php 
                     foreach ($sebaran as $index => $data) {
                         $warna = ['#e20200', '#f2720d', '#f9eb00', '#03cc3d'];
@@ -69,12 +70,17 @@
                             }
                         }).bindTooltip('<?= $data['kecamatan']." Jumlah: ".$data['jumlah'] ?>', {
                             permanent: true,
-                            direction: 'center'
+                            direction: 'left'
                         }).addTo(vector_kecamatan);
-                        
                         // 
                     <?php } ?>
-                    
+                    var blueIcons = new L.icon({
+                        iconUrl:'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                        iconSize:[25, 41],
+                        iconAnchor:[12,41],
+                        popupAnchor:[1,-34],
+                        shadowSize:[41,41]
+                    })
                     var map = L.map('map', {
                         center: [-8.2169235, 114.3311312],
                         zoom: 10,
