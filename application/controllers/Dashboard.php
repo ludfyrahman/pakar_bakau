@@ -8,26 +8,32 @@ class Dashboard extends CI_Controller
     public function index()
     {
 
-        $now            = date("Y-m-d");
-        $data           = $this->db->get('dataset')->result();
-        $ras            = 0;
-        $agama          = 0;
-        $netral         = 0;
-        // foreach ($data as $v) {
-        //     if($v->class == '1'){
-        //         $netral++;
-        //     }else if($v->class == '2'){
-        //         $ras++;
-        //     }else if($v->class == '3'){
-        //         $agama++;
-        //     }
-        // }
-        $data['uji']    = $this->db->get_where('dataset')->num_rows();
-        $data['ras']    = $ras;
-        $data['agama']  = $agama;
-        $data['netral'] = $netral;
-        $data['content']= "dashboard/index";
-        $data['title']  = "Dashboard";
+        $now                = date("Y-m-d");
+        $data['kecamatan']  = $this->db->get("kecamatan")->result_array();
+        $data['dataset']    = $this->db->get("dataset")->result_array();
+        $data['pengguna']   = $this->db->get("pengguna")->result_array();
+        $data['content']    = "dashboard/index";
+        $data['title']      = "Dashboard";
+        $kasus              = $this->db->get("kecamatan")->result_array();
+        $result             = [];
+		$tahun              = $this->db->query("SELECT tahun FROM detail_dataset dd JOIN dataset d ON dd.id_dataset=d.id GROUP BY id_dataset")->result_array();
+		$data['tahun']      = [];
+		$dataChart          = [];
+		foreach ($tahun as $t) {
+			$dataset        = $this->db->get_where('dataset', ['tahun' => $t['tahun']])->row_array();
+			$dataChart[]    = $dataset['jumlah'];
+			$data['tahun'][] = $t['tahun'];
+		}
+		$data['chart']      = $dataChart;
+		foreach ($kasus as $k) {
+			$dataset        = $this->db->query("SELECT dd.jumlah, d.tahun FROM detail_dataset dd JOIN dataset d ON dd.id_dataset=d.id WHERE dd.id_kecamatan=".$k['id_kecamatan'])->result_array();
+			$dd = [];
+			foreach ($dataset as $d) {
+				$dd[$d['tahun']] = $d;
+			}
+			$result[]       = ['nama_kecamatan' => $k['nama_kecamatan'], 'data' => $dd];
+		}
+		$data['result']     = $result;
         $this->load->view('backend/index', $data);
 
     }

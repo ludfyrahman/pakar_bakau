@@ -1,17 +1,17 @@
-<div class="container-fluid py-4">
-      <div class="row">
-        <div class="col-12">
-          <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Persebaran</h6>
-            </div>
-            <div class="card-body px-0 pt-0 pb-2">
-                <!-- <div class="form-group col-4">
-                    <select name="" class='form-control' id="">
-                        <option value="">Pilih Tahun</option>
-                    </select>
-                </div> -->
-                <div id="map"></div>
+<main class="main-content mt-1 border-radius-lg">
+    <div class="container mt-4">
+        <div class="card p-5">
+            <!-- <img src="<?= base_url('assets/img/cough.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt=""> -->
+            <h3>Peta Persebaran</h3>
+            <div id="map"></div>
+            <b>Keterangan:</b>
+            <ul>
+                <li>Merah:Tinggi</li>
+                <li>Kuning:Sedang</li>
+                <li>Hijau: Rendah</li>
+            </ul>
+            <p>Keterangan  “Jumlah kasus pada peta persebaran adalah seluruh pasien tuberkulosis yang berada di wilayah kerja puskesmas pada kecamatan tersebut termasuk pasien yang ditemukan di RS, BBKPM/BPKPM/BP4, Lembaga Pemasyarakatan, Rumah Tahanan, Dokter Praktek Mandiri, Klinik dll.”
+Jumlah penduduk per September 2020 1.708.114 jiwa</p>
                 <style>
                     #map {
                         width: 100%;
@@ -92,8 +92,6 @@
                     };
                     L.control.layers(baseMaps).addTo(map);
                 </script>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
+</main>

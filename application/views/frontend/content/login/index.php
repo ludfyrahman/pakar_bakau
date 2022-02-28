@@ -36,7 +36,7 @@
           background-size: cover;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Sistem Prediksi Tuberkulosis paru Kabupaten Banyuwangi Berbasis WebGis"</h4>
-                <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p>
+                <p class="text-white position-relative">Sistem informasi ini merupakan website yang memuat informasi tuberkulosis paru di wilayah Kabupaten Banyuwangi. Informasi tersebut antara lain informasi gambaran umum tuberkulosis paru, peta persebaran, jumlah kasus berdasarkan kecamatan, dan prediksi jumlah kasus tuberkulosis paru di Kabupaten Banyuwangi.</p>
               </div>
             </div>
           </div>
