@@ -6,7 +6,8 @@
             <p class='text-justify'>Tuberkulosis paru merupakan penyakit radang pada parenkim paru yang diakibatkan oleh infeksi Mycobacterium tuberculosis</p>
             <h4>Gejala TB Paru</h4>
             <h5>Gejala utama:</h5>
-            <p>Batuk secara terus-menerus disertai dengan dahak selama tiga minggu atau lebih. Gejala tambahan:</p>
+            <p>Batuk secara terus-menerus disertai dengan dahak selama tiga minggu atau lebih. </p>
+            <h5>Gejala tambahan:</h5>
             <ol>
                 <li>Dahak disertai dengan darah atau batuh darah</li>
                 <li>Demam selama tiga minggu atau lebih</li>
@@ -15,7 +16,10 @@
                 <li>Berat badan menurun</li>
                 <li>Kurang enak badan atau malaise</li>
                 <li>Berkeringat di malam hari meskipun tidak beraktivitas</li>
-                <li>Faktor Risiko TB Paru</li>
+                
+            </ol>
+            <h5>Faktor Risiko TB Paru</h5>
+            <ol>
                 <li>Orang dengan HIV positif dan penyakit imunokompromais lain</li>
                 <li>Orang yang mengonsumsi obat imunosupresan dalam jangka waktu panjang</li>
                 <li>Perokok</li>
