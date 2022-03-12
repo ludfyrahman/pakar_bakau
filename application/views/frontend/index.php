@@ -53,17 +53,17 @@
                 <a class="nav-link active" aria-current="page" href="<?= base_url() ?>">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('site/informasi') ?>">Informasi</a>
+                <a class="nav-link" href="<?= base_url('site/diagnosa') ?>">Diagnosa</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('site/peta') ?>">Peta</a>
+                <a class="nav-link" href="<?= base_url('site/informasi') ?>">informasi</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('site/kasus') ?>">Kasus</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('site/prediksi') ?>">Prediksi</a>
-            </li>
+            </li> -->
         </ul>
       </div>
     </div>

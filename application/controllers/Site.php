@@ -9,13 +9,24 @@ class Site extends CI_Controller { //mengextends CI_Controller
 		if(isset($_SESSION['userlevel'])){
 			redirect(base_url('dashboard'));
 		}
-        $data['title'] = "Sistem Prediksi Tuberkulosis paru Kabupaten Banyuwangi Berbasis WebGis";
+        $data['title'] = "Sistem Pakar penyakit ayam ";
         $data['content'] = "home/index";
 		$this->load->view('frontend/index',$data);
     }
+	public function diagnosa(){
+		$data['title'] = "Diagnosa - Sistem Pakar";
+        $data['content'] = "home/diagnosa";
+		$data['data']		= $this->db->get("gejala")->result_array();
+		$this->load->view('frontend/index',$data);
+	}
 	public function informasi(){
-		$data['title'] = "Informasi - WebGis";
+		$data['title'] = "Informasi - Sistem Pakar";
         $data['content'] = "home/informasi";
+		$this->load->view('frontend/index',$data);
+	}
+	public function hasil(){
+		$data['title'] = "hasil - Sistem Pakar";
+        $data['content'] = "home/hasil";
 		$this->load->view('frontend/index',$data);
 	}
 	public function kasus(){
@@ -361,12 +372,12 @@ class Site extends CI_Controller { //mengextends CI_Controller
                 // print_r($a);
                 if(count($a) < 1) {
                     $this->session->set_flashdata("message", ['danger', 'Login gagal, silahkan cek username anda kembali', ' Gagal']);
-                    return $this->index();
+                    return $this->login();
                 }
                 $a = $a[0];
                 if(md5($d['password']) != $a['password']) {
                     $this->session->set_flashdata("message", ['danger', 'Login gagal, Password anda salah', ' Gagal']);
-                    return $this->index();
+                    return $this->login();
                 }
 
                 $_SESSION['userid'] = $a['id'];

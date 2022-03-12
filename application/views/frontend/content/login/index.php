@@ -35,8 +35,12 @@
               <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
           background-size: cover;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Sistem Prediksi Tuberkulosis paru Kabupaten Banyuwangi Berbasis WebGis"</h4>
-                <p class="text-white position-relative">Sistem informasi ini merupakan website yang memuat informasi tuberkulosis paru di wilayah Kabupaten Banyuwangi. Informasi tersebut antara lain informasi gambaran umum tuberkulosis paru, peta persebaran, jumlah kasus berdasarkan kecamatan, dan prediksi jumlah kasus tuberkulosis paru di Kabupaten Banyuwangi.</p>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Sistem Pakar penyakit ayam"</h4>
+                <p class="text-white position-relative">Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
+pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
+performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
+khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
+(atau sumber kepakaran yang lain) ke komputer.</p>
               </div>
             </div>
           </div>

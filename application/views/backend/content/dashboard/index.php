@@ -6,7 +6,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Kabupaten</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Riwayat</p>
                     <h5 class="font-weight-bolder">
                       <?= count($kecamatan) ?>
                     </h5>
@@ -31,7 +31,7 @@
               <div class="row">
                 <div class="col-8">
                   <div class="numbers">
-                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Dataset</p>
+                    <p class="text-sm mb-0 text-uppercase font-weight-bold">Gejala</p>
                     <h5 class="font-weight-bolder">
                       <?= count($dataset) ?>
                     </h5>
@@ -127,8 +127,12 @@
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                       <i class="ni ni-camera-compact text-dark opacity-10"></i>
                     </div>
-                    <h5 class="text-white mb-1">Sistem Informasi Gis</h5>
-                    <p>Sistem informasi ini merupakan website yang memuat informasi tuberkulosis paru di wilayah Kabupaten Banyuwangi. Informasi tersebut antara lain informasi gambaran umum tuberkulosis paru, peta persebaran, jumlah kasus berdasarkan kecamatan, dan prediksi jumlah kasus tuberkulosis paru di Kabupaten Banyuwangi</p>
+                    <h5 class="text-white mb-1">Sistem Pakar penyakit ayam</h5>
+                    <p>Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
+pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
+performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
+khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
+(atau sumber kepakaran yang lain) ke komputer</p>
                   </div>
                 </div>
                 <div class="carousel-item h-100" style="background-image: url('<?= base_url() ?>assets/img/carousel-2.jpg');
@@ -137,8 +141,12 @@
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                       <i class="ni ni-bulb-61 text-dark opacity-10"></i>
                     </div>
-                    <h5 class="text-white mb-1">Sistem Informasi Gis</h5>
-                    <p>Sistem informasi ini merupakan website yang memuat informasi tuberkulosis paru di wilayah Kabupaten Banyuwangi. Informasi tersebut antara lain informasi gambaran umum tuberkulosis paru, peta persebaran, jumlah kasus berdasarkan kecamatan, dan prediksi jumlah kasus tuberkulosis paru di Kabupaten Banyuwangi</p>
+                    <h5 class="text-white mb-1">Sistem Pakar penyakit ayam</h5>
+                    <p>Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
+pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
+performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
+khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
+(atau sumber kepakaran yang lain) ke komputer</p>
                   </div>
                 </div>
                 <div class="carousel-item h-100" style="background-image: url('<?= base_url() ?>assets/img/carousel-3.jpg');
@@ -147,8 +155,12 @@
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                       <i class="ni ni-trophy text-dark opacity-10"></i>
                     </div>
-                    <h5 class="text-white mb-1">Sistem Informasi Gis</h5>
-                    <p>Sistem informasi ini merupakan website yang memuat informasi tuberkulosis paru di wilayah Kabupaten Banyuwangi. Informasi tersebut antara lain informasi gambaran umum tuberkulosis paru, peta persebaran, jumlah kasus berdasarkan kecamatan, dan prediksi jumlah kasus tuberkulosis paru di Kabupaten Banyuwangi</p>
+                    <h5 class="text-white mb-1">Sistem Pakar penyakit ayam</h5>
+                    <p>Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
+pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
+performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
+khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
+(atau sumber kepakaran yang lain) ke komputer</p>
                   </div>
                 </div>
               </div>

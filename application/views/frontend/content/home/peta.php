@@ -10,8 +10,8 @@
                 <li>Kuning:Sedang</li>
                 <li>Hijau: Rendah</li>
             </ul>
-            <p>“Jumlah kasus pada peta persebaran adalah seluruh pasien tuberkulosis yang berada di wilayah kerja puskesmas pada kecamatan tersebut termasuk pasien yang ditemukan di RS, BBKPM/BPKPM/BP4, Lembaga Pemasyarakatan, Rumah Tahanan, Dokter Praktek Mandiri, Klinik dll.”<br>
-Jumlah penduduk per September 2020 1.708.114 jiwa</p>
+            <p>*“Jumlah kasus pada peta persebaran adalah seluruh pasien tuberkulosis yang berada di wilayah kerja puskesmas pada kecamatan tersebut termasuk pasien yang ditemukan di RS, BBKPM/BPKPM/BP4, Lembaga Pemasyarakatan, Rumah Tahanan, Dokter Praktek Mandiri, Klinik dll.”<br>
+                *Jumlah penduduk per September 2020 1.708.114 jiwa</p>
                 <style>
                     #map {
                         width: 100%;
