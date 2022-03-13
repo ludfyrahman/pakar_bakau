@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Penyakit extends CI_Controller {
+class Role_Penyakit extends CI_Controller {
 	function __construct()
   	{
 		parent::__construct();
-		$this->low = "penyakit";
-		$this->cap = "Penyakit";
+		$this->low = "role_penyakit";
+		$this->cap = "Role Penyakit";
 		$this->load->helper("Response_helper");
 		$this->load->helper("Input_helper");
 		date_default_timezone_set('Asia/Jakarta');
@@ -18,19 +18,14 @@ class Penyakit extends CI_Controller {
 		  $this->update($this->uri->segment(3));
 		}
     }
-    public function index(){
-		$data['title'] = "Data $this->cap";
-		$data['content'] = "$this->low/index";
-		$data['data'] = $this->db->get("$this->low")->result_array();
-        $this->load->view('backend/index',$data);
-    }
 	
-	public function add()
+	public function add($id)
 	{
 		$data['title'] = "Tambah $this->cap";
 		$data['content'] = "$this->low/_form";
 		$data['data'] = null;
 		$data['type'] = 'Tambah';
+		$data['gejala'] = $this->db->get('gejala')->result_array();
 		$this->load->view('backend/index',$data);
 		// Response_Helper::render('backend/index', $data);
 	}
@@ -75,13 +70,13 @@ class Penyakit extends CI_Controller {
 			redirect(base_url($this->low));
 		}
 	}
-	public function store(){
+	public function store($id){
 		$d = $_POST;
 		try{
 			$arr =
 			[
-				'nama' => $this->input->post('nama'), 
-				'bobot' => $this->input->post('bobot'), 
+				'id_penyakit' => $this->input->post('id_penyakit'), 
+				'id_gejala' => $this->input->post('id_gejala'), 
 			];
 			// print_r($arr);
 			$this->db->insert("$this->low",$arr);
@@ -106,13 +101,7 @@ class Penyakit extends CI_Controller {
 		$data['title'] = "Detail $this->cap";
 		$data['content'] = "$this->low/_detail";
 		$data['type'] = 'Detail';
-		$data['id'] = $id;
-		$data['data'] = $this->db->get('gejala')->result_array();
-		$gejala = $this->db->query("SELECT g.id FROM role_penyakit rp JOIN penyakit p ON rp.id_penyakit=p.id JOIN gejala g ON rp.id_gejala=g.id WHERE rp.id_penyakit='$id'")->result_array();		
-		$data['gejala'] = [];
-		foreach ($gejala as $g) {
-			$data['gejala'][] = $g['id'];
-		}
+		$data['data'] = $this->db->query("SELECT g.nama, g.bobot FROM role_penyakit rp JOIN penyakit p ON rp.id_penyakit=p.id JOIN gejala g ON rp.id_gejala=g.id WHERE rp.id_penyakit='$id'")->result_array();		
 		$this->load->view('backend/index',$data);
 	}
 	
@@ -134,17 +123,7 @@ class Penyakit extends CI_Controller {
 			// $this->add();
 		}
 	}
-	public function update_gejala($id){
-		$d = $_POST;
-		foreach ($d['gejala'] as $g) {
-			$cek = $this->db->get_where('role_penyakit', ['id_penyakit' => $id, 'id_gejala' => $g])->num_rows();
-			if($cek < 1){
-				$this->db->insert('role_penyakit', ['id_penyakit' => $id, 'id_gejala' => $g]);
-			}
-		}
-		$this->session->set_flashdata("message", ['success', "Berhasil Update Gejala Data $this->cap", 'Berhasil']);
-		redirect(base_url("$this->low/detail/$id"));
-	}
+		
 	public function delete($id){
 		try{
 			$this->db->delete("$this->low", ['id' => $id]);

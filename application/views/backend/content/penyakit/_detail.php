@@ -1,68 +1,49 @@
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        <?= $title ?>
-        <!-- <small>Preview</small> -->
-      </h1>
-      <?php Response_Helper::part('breadcrumb') ?>
-    </section>
+<div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <form action="<?= base_url('penyakit/update_gejala/'.$id) ?>" method="post">
+            <div class="card mb-4">
+              <div class="card-header pb-0">
+                <h6>Data <?= $title ?></h6>
+                <button class="btn btn-primary btn-sm ms-auto float-end" type="submit">Simpan</button>
 
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- SELECT2 EXAMPLE -->
-      <div class="box box-default">
-        <div class="box-header with-border">
-          <h3 class="box-title"><?= $this->uri->segment(3) ?></h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
-          </div>
-        </div>
-        <?php Response_Helper::part('alert') ?>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <form action="" method="post">
-            <div class="row">
-              <div class="form-group col-md-6">
-                  <label>Nama</label>
-                  <h4><?= $data['nama'] ?></h4>
               </div>
-              <div class="form-group col-md-6">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <label>Aktif</label>
-                      <h4><?= $data['aktif'] ?></h4>
-                    </div>
-                    <div class="col-md-6">
-                      <label>Inaktif</label>
-                      <h4><?= $data['inaktif'] ?></h4>
-                    </div>
-                  </div>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                <?php Response_Helper::part('alert') ?>
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Bobot</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi<br><i>Silahkan centang untuk menentukan gejala penyakit</i></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php 
+                      $no = 1;
+                      foreach ($data as $d) {
+                      ?>
+                      <tr>
+                      <td class="text-xs font-weight-bold mb-0"><?= $no ?></td>
+                      <td>
+                          <p class="text-xs font-weight-bold mb-0"><?= $d['nama'] ?></p>
+                        </td>
+                        <td>
+                          <p class="text-xs font-weight-bold mb-0"><?= $d['bobot'] ?></p>
+                        </td>
+                        <td>
+                          <input type="checkbox" name="gejala[]" <?= in_array($d['id'], $gejala) ? 'checked' : '' ?> id="" value="<?= $d['id'] ?>">
+                        </td>
+                      </tr>
+                      <?php $no++;} ?>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="form-group col-md-12">
-                  <label>Parent</label>
-                  <h4><?= ($parent['jenis'] == "" ? "-" : $parent['jenis']) ?></h4>
-              </div>
-              <div class="form-group col-md-12">
-                  <label>Keterangan</label>
-                  <h5><?= $data['keterangan'] ?></h5>
-              </div>              
             </div>
           </form>
-          <!-- /.row -->
         </div>
-        <!-- /.box-body -->
-        <!-- <div class="box-footer">
-          Visit <a href="https://select2.github.io/">Select2 documentation</a> for more examples and information about
-          the plugin.
-        </div> -->
       </div>
-      <!-- /.box -->
-
-
-    </section>
-    <!-- /.content -->
-  </div>
+    </div>
