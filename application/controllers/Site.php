@@ -25,8 +25,13 @@ class Site extends CI_Controller { //mengextends CI_Controller
 		$this->load->view('frontend/index',$data);
 	}
 	public function hasil(){
-		$data['title'] = "hasil - Sistem Pakar";
-        $data['content'] = "home/hasil";
+		$d = $_POST;
+		// print_r($d);
+		$data['data']		= $this->datamodel->naive($d['gejala']);
+		$data['title'] 		= "hasil - Sistem Pakar";
+        $data['content'] 	= "home/hasil";
+		$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
+		$data['input']		= $d['gejala'];
 		$this->load->view('frontend/index',$data);
 	}
 	public function kasus(){

@@ -5,18 +5,39 @@
             <i>Hasil penyakit yang ditampilkan sesuai dengan gejala yang dipilih</i>
             <table class="table table-striped mt-4">
                 <tr>
-                    <td>Nama Penyakit</td><td>Penyakit Tetelo</td>
+                    <td>Nama Penyakit</td><td><?= $data[0]['penyakit'] ?></td>
                 </tr>
                 <tr>
-                    <td>Gejala</td><td>1. ayam lemas karena nafsu makan turun<br>
-                        2. pertumbuhan berat badan lambat,<br>
-                        3. lehernya melintir (telo) atau spot merah di usus (pencernaan)n<br></td>
+                    <td>Gejala</td><td>
+                        <?php 
+                        foreach ($gejala as $nomor => $g) {
+                            echo ($nomor+1).". ".(in_array($g['id'], $input) ? '<b>' : '').$g['nama'].(in_array($g['id'], $input) ? '</b>' : '')."<br>";
+                        }
+                        ?>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Probabilitas</td><td><b>87%</b></td>
+                    <td>Nilai Probabilitas</td><td><b><?= $data[0]['v'] ?></b></td>
                 </tr>
             </table>
-            <!-- <a href="<?= base_url('site/hasil') ?>"><button class="btn btn-primary">Proses</button></a> -->
+            <table class="table table-striped mt-4">
+                <thead>
+                    <tr>
+                        <td>NO</td><td>Nama Penyakit</td><td>Nilai V</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    foreach ($data as $index => $d) {
+                    ?>
+                    <tr class='<?= $index == 0 ? 'bg-success text-white' : '' ?>'>
+                        <td><?= $index+1 ?></td>
+                        <td><?= $d['penyakit'] ?></td>
+                        <td><?= $d['v'] ?></td>
+                    </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </main>
