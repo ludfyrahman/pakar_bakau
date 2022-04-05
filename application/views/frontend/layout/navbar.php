@@ -7,7 +7,7 @@
             <li class="breadcrumb-item text-sm"><a class="opacity-5 text-white" href="javascript:;">Pages</a></li>
             <li class="breadcrumb-item text-sm text-white active" aria-current="page">Virtual Reality</li>
           </ol> -->
-          <?php Response_Helper::part('breadcrumb') ?>
+          <!-- <?php Response_Helper::part('breadcrumb') ?> -->
           <h6 class="font-weight-bolder text-white mb-0"><?= $title ?></h6>
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
@@ -18,6 +18,12 @@
             </div> -->
           </div>
           <ul class="navbar-nav  justify-content-end">
+            <li class="nav-item d-flex align-items-center">
+              <a href="<?= base_url('') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
+                <!-- <i class="fa fa-user me-sm-1"></i> -->
+                <span class="d-sm-inline d-none">Home</span>
+              </a>
+            </li>
             <li class="nav-item d-flex align-items-center">
               <a href="<?= base_url('site/login') ?>" class="nav-link text-white font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>

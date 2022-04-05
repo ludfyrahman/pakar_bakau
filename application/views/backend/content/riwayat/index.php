@@ -14,6 +14,7 @@
                   <thead>
                     <tr>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Informasi</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Penyakit</th>
                       <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Gejala</th>
                       <!-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th> -->
@@ -26,6 +27,9 @@
                     ?>
                     <tr>
                      <td class="text-xs font-weight-bold mb-0"><?= $no ?></td>
+                     <td>
+                        <p class="text-xs font-weight-bold mb-0"><?= $d['tanggal']."[".$d['ip']."]" ?></p>
+                      </td>
                      <td>
                         <p class="text-xs font-weight-bold mb-0"><?= $d['penyakit'] ?></p>
                       </td>

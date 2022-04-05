@@ -52,10 +52,41 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		}
 		$data_penyakit[] = ['v' => number_format($ncMulti*$pvj, 8), 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
 	}
-	// echo "<pre>";
+	
 	$this->array_sort_by_column($data_penyakit, 'v');
+
+
+	// insert data to riwayat
+	$tanggal = date('Y-m-d H:i:s');
+	$ip = $this->get_client_ip();
+	$cek = $this->db->get_where("riwayat", ['ip' => $ip])->num_rows();
+	if($cek < 1){
+		$this->db->insert('riwayat', ['id_penyakit' => $data_penyakit[0]['id'], 'ip' => $ip, 'tanggal' => $tanggal]);
+		$id = $this->db->insert_id();
+		foreach ($data as $d) {
+			$this->db->insert('detail_riwayat', ['id_riwayat' => $id, 'id_gejala' => $d]);
+		}
+	}
 	return $data_penyakit;
   }
+  public function get_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
   public function array_sort_by_column(&$arr, $col, $dir = SORT_DESC) {
     $sort_col = array();
     foreach ($arr as $key => $row) {
