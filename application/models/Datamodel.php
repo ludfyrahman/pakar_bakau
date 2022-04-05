@@ -27,24 +27,30 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		$gejalaArray	= [];
 		$jumlah			= 0;
 		$rata_rata		= 0;
-		$multiplication	= 1;
+		$klasifikasi	= 1;
 		foreach ($gejala as $index => $g) {
-
-			if(in_array($g['id'], $data)){
-				$jumlah+=((1 + $jumlah_gejala * $jumlah_penyakit) / (1 + $jumlah_gejala));
-				
-				$multiplication *= ((1 + $jumlah_gejala * $jumlah_penyakit) / (1 + $jumlah_gejala));
-			}else{
-				$jumlah+=((0 + $jumlah_gejala * $jumlah_penyakit) / (0 + $jumlah_gejala));
-				$multiplication *= ((0 + $jumlah_gejala * $jumlah_penyakit) / (0 + $jumlah_gejala));
-				// echo ((1 + $jumlah_gejala * $jumlah_penyakit) / (1 + $jumlah_gejala));
-				// echo "<br>";
-			}
+			$gejalaArray[] = $g['id'];
 		}
 		// echo $multiplication;
-		$rata_rata = $jumlah / count($gejala);
-
-		$data_penyakit[] = ['v' => $multiplication, 'penyakit' => $pe['nama'], 'id' => $pe['id']];
+		$pvj = 1 / $jumlah_gejala;
+		$ncArray = [];
+		$gejala = [];
+		foreach ($data as $index => $d) {
+			$nc = 0;
+			$tf = 0;
+			if(in_array($d, $gejalaArray)){
+				$tf = 1;
+			}else{
+				$tf = 0;
+			}
+			$nc = ($tf +$jumlah_gejala*$p ) / ( 1 + $jumlah_gejala);
+			$ncArray[] = $nc;
+		}
+		$ncMulti = 1;
+		foreach ($ncArray as $na) {
+			$ncMulti*=$na;
+		}
+		$data_penyakit[] = ['v' => number_format($ncMulti*$pvj, 8), 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
 	}
 	// echo "<pre>";
 	$this->array_sort_by_column($data_penyakit, 'v');

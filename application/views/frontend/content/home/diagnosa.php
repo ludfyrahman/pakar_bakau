@@ -7,13 +7,13 @@
                <div class="table-responsive">
                <table class="table table-striped mt-4">
                     <tr>
-                        <th>Nama Gejala</th><th>Pilih kondisi</th>
+                        <th>Kode</th><th>Nama Gejala</th><th>Pilih kondisi</th>
                     </tr>
-                    <?php foreach ($data as $g) {?>
+                    <?php $no = 1;foreach ($data as $index => $g) {?>
                     <tr>
-                        <td><?= $g['nama'] ?></td><td><input type="checkbox" value='<?= $g['id'] ?>' name="gejala[]" id=""></td>
+                        <td><?= (strlen($no) > 1 ? 'G' : 'G0').$no ?></td><td><?= $g['nama'] ?></td><td><input type="checkbox" value='<?= $g['id'] ?>' name="gejala[]" id=""></td>
                     </tr>
-                    <?php } ?>
+                    <?php $no++;} ?>
                 </table>
                </div>
                 <button class="btn btn-primary" type="submit">Proses</button>

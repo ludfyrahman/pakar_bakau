@@ -26,7 +26,10 @@
                         <td>Nilai Probabilitas</td><td><b><?= $data[0]['v'] ?></b></td>
                     </tr>
                     <tr>
-                        <td>Presentase</td><td><?= $prob / $total * 100 ?>%</td>
+                        <td>Presentase</td><td><?= ($prob > 0 ? $prob / $total * 100 : 0) ?>%</td>
+                    </tr>
+                    <tr>
+                        <td>Solusi</td><td><?= $data[0]['solusi'] ?></td>
                     </tr>
                 </table>
                 <table class="table table-striped mt-4">

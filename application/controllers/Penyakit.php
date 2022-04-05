@@ -54,17 +54,28 @@ class Penyakit extends CI_Controller {
 				for($row=2; $row<=$highestRow; $row++){
 	
 					$nama = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-					$bobot = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-
+					$solusi = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+					// $ge = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+					// $g = str_replace('G', '', $ge);
+					// $gejala = array_map('intval', explode(', ', $g));;
 					$data[] = array(
 						'nama'          => $nama,
-						'bobot'          =>$bobot,
+						'solusi'          =>$solusi,
+						// 'gejala' => $gejala
 					);
+					// foreach ($gejala as $gg) {
+					// 	$dataRole = [
+					// 		'id_penyakit' => $row-1,
+					// 		'id_gejala' => $gg
+					// 	];
+					// 	$this->db->insert('role_penyakit', $dataRole);
+					// }
 	
 				} 
 	
 			}
-	
+			// echo "<pre>";
+			// print_r($data);
 			$this->db->insert_batch($this->low, $data);
 			$this->session->set_flashdata("message", ['success', "Import file excel berhasil disimpan di database", ' Berhasil']);
 			redirect(base_url($this->low));
@@ -81,7 +92,7 @@ class Penyakit extends CI_Controller {
 			$arr =
 			[
 				'nama' => $this->input->post('nama'), 
-				'bobot' => $this->input->post('bobot'), 
+				'solusi' => $this->input->post('solusi'), 
 			];
 			// print_r($arr);
 			$this->db->insert("$this->low",$arr);
@@ -122,7 +133,7 @@ class Penyakit extends CI_Controller {
 			$arr =
 			[
 				'nama' => $this->input->post('nama'), 
-				'bobot' => $this->input->post('bobot'), 
+				'solusi' => $this->input->post('solusi'), 
 			];
 			$this->session->set_flashdata("message", ['success', "Ubah $this->cap Berhasil", ' Berhasil']);
 			$this->db->update("$this->low",$arr, ['id' => $id]);

@@ -29,9 +29,9 @@
                      <td>
                         <p class="text-xs font-weight-bold mb-0"><?= $d['nama'] ?></p>
                       </td>
-                      <td>
+                      <!-- <td>
                         <p class="text-xs font-weight-bold mb-0"><?= $d['bobot'] ?></p>
-                      </td>
+                      </td> -->
                       
                       <td class="align-middle">
                         <a href="<?= base_url($this->low.'/edit/'.$d['id']) ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">

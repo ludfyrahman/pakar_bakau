@@ -34,6 +34,9 @@ class Site extends CI_Controller { //mengextends CI_Controller
 		$d = $_POST;
 		// print_r($d);
 		$data['data']		= $this->datamodel->naive($d['gejala']);
+		// echo "<pre>";
+		// print_r($d['gejala']);
+		// print_r($data);
 		$data['title'] 		= "hasil - Sistem Pakar";
         $data['content'] 	= "home/hasil";
 		$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
@@ -105,168 +108,9 @@ class Site extends CI_Controller { //mengextends CI_Controller
         session_destroy();
         redirect(base_url());
     }
-    public function persebaran(){
-        $data['title'] = "Persebaran Penyakit";
-		$data['content'] = "dataset/persebaran";
-		$data['type'] = 'Penghitungan';
-		$data['data'] = $this->db->get("kecamatan")->result_array();
-        $persebaran = $this->db->get_where('detail_dataset', ['id_dataset' => 1])->result_array();
-        $persebaran_total = $this->db->select_max("jumlah")->from("detail_dataset")->where(['id_dataset' => 1])->get()->row_array();
-        $sebaran = [];
-        $total = 0;
-        $kategori = 4;
-        $tb="kecamatan w  LEFT OUTER JOIN ( SELECT id_kecamatan, id_dataset,jumlah as jum FROM detail_dataset WHERE id_dataset=1 GROUP BY id_kecamatan )md ON md.id_kecamatan = w.id_kecamatan ";
-		$fq="w.id_kecamatan, w.nama_kecamatan as nm, w.geojson,w.latitude,w.longitude, CASE WHEN NOT md.jum IS NULL THEN md.jum ELSE 0 END  AS aek, 0 as x1x2, 0 as powx1x2, 0 as s, 0 as z, '' as krit ";
-		//init view
-		$retVal="";
-		$renderZ=$this->datamodel->qRead($tb,$fq,"");
-		$jum = 0;
-		$rata = 0;
-		$banyak = $renderZ->num_rows();
-		foreach($renderZ->result() as $row)
-		{
-			$jum += $row->aek;
-		}
-
-		$rata = $jum / $banyak ;
-		$jumx1x2 = 0;
-
-		foreach($renderZ->result() as $row)
-		{
-			$row->x1x2 = $row->aek - $rata;
-			$row->powx1x2 = pow($row->x1x2,2);
-			$jumx1x2 += $row->powx1x2;
-		}
-
-		$s = sqrt($jumx1x2 / $banyak);
-		$z = null;
-		foreach($renderZ->result() as $row)
-		{
-			$row->s = $s;
-			$row->z = ($row->aek - $rata) / $row->s;
-            $z[] = $row->z;
-		}
-
-		$zTemp=null;
-		for($i=0;$i<count($z);$i++)
-			if($z[$i]>0)
-				$zTemp[] = $z[$i];
-
-
-		$maxZ = max($zTemp);
-		$minZ = min($zTemp);
-
-		$intv = ($maxZ - $minZ) / 3;
-		
-
-		$rg3 = $maxZ;
-		$rg2 = $maxZ - $intv;
-		$rg1 = $rg2 - $intv;
-
-
-		foreach($renderZ->result() as $row)
-		{
-					if($row->z < 0 )
-					$row->krit = 4;
-				else
-				if($row->z <= $rg1)
-					$row->krit = 3;
-				else	
-				if($row->z <= $rg2)
-					$row->krit = 2;
-				else	
-					$row->krit = 1;
-			
-		}
-
-		$data['sebaran']= [];
-		foreach($renderZ->result_array() as $row)
-		{
-            $data['sebaran'][] = ['kecamatan' => $row['nm'], 'kategori' => $row['krit'], 'jumlah' => $row['aek'], 'geojson' => $row['geojson'], 'latitude' => $row['latitude'], 'longitude' => $row['longitude']];
-			
-		}
-        
-		$this->load->view('backend/index',$data);
-    }
     public function cek($id_produk){
         $cek = $this->db->get_where("produk", ['id' => $id_produk])->row_array();
         echo json_encode($cek);
-    }
-    public function json(){
-
-		$tb="kecamatan w  LEFT OUTER JOIN ( SELECT id_kecamatan, id_dataset,jumlah as jum FROM detail_dataset WHERE id_dataset=1 GROUP BY id_kecamatan )md ON md.id_kecamatan = w.id_kecamatan ";
-		$fq="w.id_kecamatan, w.nama_kecamatan as nm, CASE WHEN NOT md.jum IS NULL THEN md.jum ELSE 0 END  AS aek, 0 as x1x2, 0 as powx1x2, 0 as s, 0 as z, '' as krit ";
-		//init view
-		$retVal="";
-		$renderZ=$this->datamodel->qRead($tb,$fq,"");
-		$jum = 0;
-		$rata = 0;
-		$banyak = $renderZ->num_rows();
-		foreach($renderZ->result() as $row)
-		{
-			$jum += $row->aek;
-		}
-
-		$rata = $jum / $banyak ;
-		$jumx1x2 = 0;
-
-		foreach($renderZ->result() as $row)
-		{
-			$row->x1x2 = $row->aek - $rata;
-			$row->powx1x2 = pow($row->x1x2,2);
-			$jumx1x2 += $row->powx1x2;
-		}
-
-		$s = sqrt($jumx1x2 / $banyak);
-		$z = null;
-		foreach($renderZ->result() as $row)
-		{
-			$row->s = $s;
-			$row->z = ($row->aek - $rata) / $row->s;
-            $z[] = $row->z;
-		}
-
-		$zTemp=null;
-		for($i=0;$i<count($z);$i++)
-			if($z[$i]>0)
-				$zTemp[] = $z[$i];
-
-
-		$maxZ = max($zTemp);
-		$minZ = min($zTemp);
-
-		$intv = ($maxZ - $minZ) / 3;
-		
-
-		$rg3 = $maxZ;
-		$rg2 = $maxZ - $intv;
-		$rg1 = $rg2 - $intv;
-
-
-		foreach($renderZ->result() as $row)
-		{
-					if($row->z < 0 )
-					$row->krit = 4;
-				else
-				if($row->z <= $rg1)
-					$row->krit = 3;
-				else	
-				if($row->z <= $rg2)
-					$row->krit = 2;
-				else	
-					$row->krit = 1;
-			
-		}
-
-		$data= [];
-		foreach($renderZ->result_array() as $row)
-		{
-            $data[] = ['kecamatan' => $row['nm'], 'kategori' => $row['krit'], 'jumlah' => $row['aek']];
-			
-		}
-        echo "<pre>";
-        print_r($data);
-		
     }
 }
 ?>

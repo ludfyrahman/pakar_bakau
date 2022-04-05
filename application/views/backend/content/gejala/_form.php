@@ -17,10 +17,10 @@
                   <label>Nama</label>
                   <input type="text" value='<?= Input_Helper::postOrOr('nama', isset($data['nama']) ? $data['nama'] : '') ?>' name="nama" class="form-control" placeholder="Masukkan nama gejala" required>
               </div>
-              <div class="form-group col-md-12">
+              <!-- <div class="form-group col-md-12">
                   <label>Bobot</label>
                   <input type="number" value='<?= Input_Helper::postOrOr('bobot', isset($data['bobot']) ? $data['bobot'] : '') ?>' name="bobot" step="0.01" class="form-control" placeholder="Masukkan bobot" required>
-              </div>
+              </div> -->
               
               <div class="col-md-12">
                 <button class="btn btn-primary"><?= $type ?></button>
@@ -48,6 +48,7 @@
             <div class="row">
               <div class="form-group col-md-12">
                   <label>File Excel</label>
+                  <i class='text-muted'>Silahkan download template  <a href="<?= base_url('data/gejala.xlsx') ?>">disini</a></i>
                   <input type="file" name="file" class="form-control" placeholder="Masukkan nama gejala" required>
               </div>
               

@@ -15,8 +15,9 @@
                     <thead>
                       <tr>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">ID</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Kode</th>
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Nama</th>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Bobot</th>
+                        <!-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Bobot</th> -->
                         <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi<br><i>Silahkan centang untuk menentukan gejala penyakit</i></th>
                       </tr>
                     </thead>
@@ -28,11 +29,14 @@
                       <tr>
                       <td class="text-xs font-weight-bold mb-0"><?= $no ?></td>
                       <td>
-                          <p class="text-xs font-weight-bold mb-0"><?= $d['nama'] ?></p>
+                          <p class="text-xs font-weight-bold mb-0"><?= (strlen($no) > 1 ? 'G' : 'G0').$no ?></p>
                         </td>
                         <td>
-                          <p class="text-xs font-weight-bold mb-0"><?= $d['bobot'] ?></p>
+                          <p class="text-xs font-weight-bold mb-0"><?= $d['nama'] ?></p>
                         </td>
+                        <!-- <td>
+                          <p class="text-xs font-weight-bold mb-0"><?= $d['bobot'] ?></p>
+                        </td> -->
                         <td>
                           <input type="checkbox" name="gejala[]" <?= in_array($d['id'], $gejala) ? 'checked' : '' ?> id="" value="<?= $d['id'] ?>">
                         </td>

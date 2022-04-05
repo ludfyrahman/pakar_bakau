@@ -9,14 +9,11 @@ class Gejala extends CI_Controller {
 		$this->load->helper("Response_helper");
 		$this->load->helper("Input_helper");
 		date_default_timezone_set('Asia/Jakarta');
-		// if(!isset($_SESSION['kode_user'])){
-		// 	redirect(base_url());
+		// if($this->uri->segment(2) == "add" && $_SERVER['REQUEST_METHOD'] == "POST"){
+		//   $this->store($this->uri->segment(4));
+		// }else if($this->uri->segment(2) == "edit" && $_SERVER['REQUEST_METHOD'] == "POST"){
+		//   $this->update($this->uri->segment(3));
 		// }
-		if($this->uri->segment(2) == "add" && $_SERVER['REQUEST_METHOD'] == "POST"){
-		  $this->store($this->uri->segment(4));
-		}else if($this->uri->segment(2) == "edit" && $_SERVER['REQUEST_METHOD'] == "POST"){
-		  $this->update($this->uri->segment(3));
-		}
     }
     public function index(){
 		$data['title'] = "Data $this->cap";
@@ -54,11 +51,11 @@ class Gejala extends CI_Controller {
 				for($row=2; $row<=$highestRow; $row++){
 	
 					$nama = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
-					$bobot = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+					// $bobot = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
 
 					$data[] = array(
 						'nama'          => $nama,
-						'bobot'          =>$bobot,
+						// 'bobot'          =>$bobot,
 					);
 	
 				} 
@@ -81,7 +78,7 @@ class Gejala extends CI_Controller {
 			$arr =
 			[
 				'nama' => $this->input->post('nama'), 
-				'bobot' => $this->input->post('bobot'), 
+				// 'bobot' => $this->input->post('bobot'), 
 			];
 			// print_r($arr);
 			$this->db->insert("$this->low",$arr);
@@ -116,7 +113,7 @@ class Gejala extends CI_Controller {
 			$arr =
 			[
 				'nama' => $this->input->post('nama'), 
-				'bobot' => $this->input->post('bobot'), 
+				// 'bobot' => $this->input->post('bobot'), 
 			];
 			$this->session->set_flashdata("message", ['success', "Ubah $this->cap Berhasil", ' Berhasil']);
 			$this->db->update("$this->low",$arr, ['id' => $id]);
