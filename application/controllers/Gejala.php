@@ -9,11 +9,11 @@ class Gejala extends CI_Controller {
 		$this->load->helper("Response_helper");
 		$this->load->helper("Input_helper");
 		date_default_timezone_set('Asia/Jakarta');
-		// if($this->uri->segment(2) == "add" && $_SERVER['REQUEST_METHOD'] == "POST"){
-		//   $this->store($this->uri->segment(4));
-		// }else if($this->uri->segment(2) == "edit" && $_SERVER['REQUEST_METHOD'] == "POST"){
-		//   $this->update($this->uri->segment(3));
-		// }
+		if($this->uri->segment(2) == "add" && $_SERVER['REQUEST_METHOD'] == "POST"){
+		  $this->store($this->uri->segment(4));
+		}else if($this->uri->segment(2) == "edit" && $_SERVER['REQUEST_METHOD'] == "POST"){
+		  $this->update($this->uri->segment(3));
+		}
     }
     public function index(){
 		$data['title'] = "Data $this->cap";

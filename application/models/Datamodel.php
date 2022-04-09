@@ -50,7 +50,7 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		foreach ($ncArray as $na) {
 			$ncMulti*=$na;
 		}
-		$data_penyakit[] = ['v' => number_format($ncMulti*$pvj, 8), 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
+		$data_penyakit[] = ['v' => number_format($ncMulti*$pvj, 20), 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
 	}
 	
 	$this->array_sort_by_column($data_penyakit, 'v');

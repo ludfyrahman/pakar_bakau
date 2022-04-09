@@ -9,22 +9,26 @@ class Dashboard extends CI_Controller
     {
 
         $now                = date("Y-m-d");
-        $data['kecamatan']  = [];
-        $data['dataset']    = [];
+        $data['riwayat']  	= $this->db->get("riwayat")->result_array();
+        $data['gejala']   	= $this->db->get("gejala")->result_array();
         $data['pengguna']   = $this->db->get("pengguna")->result_array();
         $data['content']    = "dashboard/index";
         $data['title']      = "Dashboard";
         $kasus              = [];
         $result             = [];
 		// $tahun              = $this->db->query("SELECT tahun FROM detail_dataset dd JOIN dataset d ON dd.id_dataset=d.id GROUP BY id_dataset")->result_array();
-		$data['tahun']      = [];
+		$data['penyakit']   = [];
 		$dataChart          = [];
-		// foreach ($tahun as $t) {
-		// 	$dataset        = $this->db->get_where('dataset', ['tahun' => $t['tahun']])->row_array();
-		// 	$dataChart[]    = $dataset['jumlah'];
-		// 	$data['tahun'][] = $t['tahun'];
-		// }
-		// $data['chart']      = $dataChart;
+		$penyakit			= $this->db->get('penyakit')->result_array();
+		foreach ($penyakit as $t) {
+			$dataset        = $this->db->get_where('riwayat', ['id_penyakit' => $t['id']])->result_array();
+			if($dataset > 0){
+				$dataChart[]    = count($dataset);
+				$data['penyakit'][] = $t['nama'];
+			}
+			
+		}
+		$data['chart']      = $dataChart;
 		// foreach ($kasus as $k) {
 		// 	$dataset        = $this->db->query("SELECT dd.jumlah, d.tahun FROM detail_dataset dd JOIN dataset d ON dd.id_dataset=d.id WHERE dd.id_kecamatan=".$k['id_kecamatan'])->result_array();
 		// 	$dd = [];

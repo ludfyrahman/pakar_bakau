@@ -25,6 +25,12 @@ class Site extends CI_Controller { //mengextends CI_Controller
 		$data['data']		= $this->db->get("gejala")->result_array();
 		$this->load->view('frontend/index',$data);
 	}
+	public function penyakit(){
+		$data['title'] 		= "Penyakit - Sistem Pakar";
+        $data['content'] 	= "home/penyakit";
+		$data['data']		= $this->db->get("penyakit")->result_array();
+		$this->load->view('frontend/index',$data);
+	}
 	public function informasi(){
 		$data['title'] = "Informasi - Sistem Pakar";
         $data['content'] = "home/informasi";
@@ -32,41 +38,18 @@ class Site extends CI_Controller { //mengextends CI_Controller
 	}
 	public function hasil(){
 		$d = $_POST;
-		// print_r($d);
-		$data['data']		= $this->datamodel->naive($d['gejala']);
-		// echo "<pre>";
-		// print_r($d['gejala']);
-		// print_r($data);
-		$data['title'] 		= "hasil - Sistem Pakar";
-        $data['content'] 	= "home/hasil";
-		$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
-		$data['input']		= $d['gejala'];
-		$this->load->view('frontend/index',$data);
-	}
-	public function kasus(){
-		$data['title'] = "Kasus - WebGis";
-        $data['content'] = "home/kasus";
-		$kasus = $this->db->get("kecamatan")->result_array();
-		$result = [];
-		$tahun = $this->db->query("SELECT tahun FROM detail_dataset dd JOIN dataset d ON dd.id_dataset=d.id GROUP BY id_dataset")->result_array();
-		$data['tahun'] = [];
-		$dataChart = [];
-		foreach ($tahun as $t) {
-			$dataset = $this->db->get_where('dataset', ['tahun' => $t['tahun']])->row_array();
-			$dataChart[] = $dataset['jumlah'];
-			$data['tahun'][] = $t['tahun'];
+		if(count($d['gejala']) < 4){
+			echo "<script>alert('Silahkan pilih gejala minimal 4');window.history.go(-1);</script>";
+			// header('Location: ' . $_SERVER['HTTP_REFERER']);
+		}else{
+			$data['data']		= $this->datamodel->naive($d['gejala']);
+			$data['title'] 		= "hasil - Sistem Pakar";
+			$data['content'] 	= "home/hasil";
+			$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
+			$data['input']		= $d['gejala'];
+			$this->load->view('frontend/index',$data);
 		}
-		$data['chart'] = $dataChart;
-		foreach ($kasus as $k) {
-			$dataset = $this->db->query("SELECT dd.jumlah, d.tahun FROM detail_dataset dd JOIN dataset d ON dd.id_dataset=d.id WHERE dd.id_kecamatan=".$k['id_kecamatan'])->result_array();
-			$dd = [];
-			foreach ($dataset as $d) {
-				$dd[$d['tahun']] = $d;
-			}
-			$result[] = ['nama_kecamatan' => $k['nama_kecamatan'], 'data' => $dd];
-		}
-		$data['result'] = $result;
-		$this->load->view('frontend/index',$data);
+		
 	}
 	public function login () {
 		if(isset($_SESSION['userlevel'])){

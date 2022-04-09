@@ -19,7 +19,7 @@
               </div>
               <div class="form-group col-md-12">
                   <label>Solusi</label>
-                  <textarea type="number" value='<?= Input_Helper::postOrOr('solusi', isset($data['solusi']) ? $data['solusi'] : '') ?>' name="solusi" rows='5'  class="form-control" placeholder="Masukkan solusi" required></textarea>
+                  <textarea  name="solusi" rows='5'  class="form-control" placeholder="Masukkan solusi" required><?= Input_Helper::postOrOr('solusi', isset($data['solusi']) ? $data['solusi'] : '') ?></textarea>
               </div>
               
               <div class="col-md-12">

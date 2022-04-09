@@ -17,10 +17,6 @@
                   <label>Nama</label>
                   <input type="text" value='<?= Input_Helper::postOrOr('nama', isset($data['nama']) ? $data['nama'] : '') ?>' name="nama" class="form-control" placeholder="Masukkan nama gejala" required>
               </div>
-              <!-- <div class="form-group col-md-12">
-                  <label>Bobot</label>
-                  <input type="number" value='<?= Input_Helper::postOrOr('bobot', isset($data['bobot']) ? $data['bobot'] : '') ?>' name="bobot" step="0.01" class="form-control" placeholder="Masukkan bobot" required>
-              </div> -->
               
               <div class="col-md-12">
                 <button class="btn btn-primary"><?= $type ?></button>

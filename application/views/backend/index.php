@@ -57,9 +57,9 @@
     new Chart(ctx1, {
       type: "line",
       data: {
-        labels: <?= json_encode($tahun) ?>,
+        labels: <?= json_encode($penyakit) ?>,
         datasets: [{
-          label: "Mobile apps",
+          label: "Penyakit",
           tension: 0.4,
           borderWidth: 0,
           pointRadius: 0,

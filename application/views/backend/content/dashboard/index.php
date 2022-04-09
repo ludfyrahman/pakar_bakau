@@ -8,7 +8,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Riwayat</p>
                     <h5 class="font-weight-bolder">
-                      <?= count($kecamatan) ?>
+                      <?= count($riwayat) ?>
                     </h5>
                     <!-- <p class="mb-0">
                       <span class="text-success text-sm font-weight-bolder">+55%</span>
@@ -33,7 +33,7 @@
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Gejala</p>
                     <h5 class="font-weight-bolder">
-                      <?= count($dataset) ?>
+                      <?= count($gejala) ?>
                     </h5>
                     <!-- <p class="mb-0">
                       <span class="text-success text-sm font-weight-bolder">+3%</span>
@@ -184,12 +184,12 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
+                made with <i class="fa fa-heart"></i> by aklil
+                <!-- <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a> -->
+                <!-- for a better web. -->
               </div>
             </div>
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                 <li class="nav-item">
                   <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
@@ -204,7 +204,7 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                   <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
                 </li>
               </ul>
-            </div>
+            </div> -->
           </div>
         </div>
       </footer>
