@@ -5,7 +5,7 @@
             <!-- <i>Silahkan pilih gejala sesuai kondisi  yang ditemukan pada ayam anda</i> -->
             <form action="<?= base_url('site/hasil') ?>" method="post">
                <div class="table-responsive">
-               <table class=" table-striped mt-4">
+               <table class="table table-striped mt-4">
                     <tr>
                         <th >Nama Penyakit</th><th >Solusi</th>
                     </tr>
