@@ -36,6 +36,11 @@ class Site extends CI_Controller { //mengextends CI_Controller
         $data['content'] = "home/informasi";
 		$this->load->view('frontend/index',$data);
 	}
+    public function pakar(){
+		$data['title'] = "Pakar - Sistem Pakar";
+        $data['content'] = "home/pakar";
+		$this->load->view('frontend/index',$data);
+	}
 	public function hasil(){
 		$d = $_POST;
 		if(count($d['gejala']) < 4){

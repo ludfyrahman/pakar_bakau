@@ -25,9 +25,34 @@
               </a>
             </li>
             <li class="nav-item d-flex align-items-center">
+              <a href="<?= base_url('site/penyakit') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
+                <!-- <i class="fa fa-user me-sm-1"></i> -->
+                <span class="d-sm-inline d-none">Penyakit</span>
+              </a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a href="<?= base_url('site/pakar') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
+                <!-- <i class="fa fa-user me-sm-1"></i> -->
+                <span class="d-sm-inline d-none">Pakar</span>
+              </a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a href="<?= base_url('site/informasi') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
+                <!-- <i class="fa fa-user me-sm-1"></i> -->
+                <span class="d-sm-inline d-none">About</span>
+              </a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <a href="<?= base_url('site/diagnosa') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
+                <!-- <i class="fa fa-user me-sm-1"></i> -->
+                <span class="d-sm-inline d-none">Diagnosa</span>
+              </a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
               <a href="<?= base_url('site/login') ?>" class="nav-link text-white font-weight-bold px-0">
-                <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Masuk</span>
+                <!-- <i class="fa fa-user me-sm-1"></i> -->
+                <!-- <span class="d-sm-inline d-none">Login</span> -->
+                <button class="btn bg-white d-sm-inline d-none m-auto">Login</button>
               </a>
             </li>
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -39,11 +64,11 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item px-3 d-flex align-items-center">
+            <!-- <li class="nav-item px-3 d-flex align-items-center">
               <a href="javascript:;" class="nav-link text-white p-0">
                 <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer"></i>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown pe-2 d-flex align-items-center">
               <!-- <a href="javascript:;" class="nav-link text-white p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell cursor-pointer"></i>
@@ -55,3 +80,8 @@
     </nav>
     <!-- End Navbar -->
   </div>
+  <style>
+    .navbar-nav li{
+      padding:0 12px;
+    }
+  </style>

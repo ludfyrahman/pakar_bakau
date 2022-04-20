@@ -91,3 +91,4 @@ define('CLEANING_CHAR', '~[\\\\/:*?._&#@$%^(){}!-+,"<>@|\d+]~ ');
 define("STATUS_PENGGUNA", array('Tidak Aktif', 'Aktif'));
 define("JENIS_KELAMIN", array('Perempuan', 'Laki Laki'));
 define("CLASSIFICATION", array('', 'Netral', 'Hatespeech Ras', 'Hatespeech Agama'));
+define('pakar_description', 'Berasal dari keluarga yang berkultur Madura. Selepas meraih Sarjana Peternakan di Universitas Muhammadiyah Malang, aktivitas Andi Babussalam lebih banyak menghabiskan beternak ayam mulai tahun 1997. Pada Tahun 2010, Andi babussalam diangkat di Dinas Peternakan Provinsi Jawa Timur sebagai tenaga Out Sourcing, kemudian pada tahun 2022 terjaring PPPK dengan NIPPPK.197410192022211002 hingga saat ini Andi Babussalam masih tercatat sebagai ASN di UPT Pembibitan Ternak dan Kesehatan Hewan Madura di Pamekasan.');

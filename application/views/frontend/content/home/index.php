@@ -8,19 +8,27 @@ pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
 performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
 khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
 (atau sumber kepakaran yang lain) ke komputer.</p>
-            <h3>Biodata Pakar</h3>
-            <img src="<?= base_url('assets/img/pakar/pakar.jpeg') ?>" style='width:180px' class='m-auto' alt="">
-            <table class='table table-striped mt-2'>
-                <tr>
-                    <td>Nama</td><td>Andi Babasusalam, S.Pt.</td>
-                </tr>
-                <tr>
-                    <td>Tempat, Tanggal lahir</td><td>10 Oktober 1974 di Sumenep, Jawa Timur</td>
-                </tr>
-            </table>
-            <p>Berasal dari keluarga yang berkultur Madura. Selepas meraih Sarjana Peternakan di Universitas Muhammadiyah Malang, aktivitas Andi Babussalam lebih banyak menghabiskan beternak ayam mulai tahun 1997.
-Pada Tahun 2010, Andi babussalam diangkat di Dinas Peternakan Provinsi Jawa Timur sebagai tenaga Out Sourcing, kemudian pada tahun 2022 terjaring PPPK dengan NIPPPK.197410192022211002 hingga saat ini Andi Babussalam masih tercatat sebagai ASN di UPT Pembibitan Ternak dan Kesehatan Hewan Madura di Pamekasan.</p>
-            <h3>Galeri Kandang</h3>
+            <div class="row">
+                <div class="col-3 nopadding m-auto">
+                    <img src="<?= base_url('assets/img/pakar/pakar.jpeg') ?>" style='width:180px' class='m-auto' alt="">
+                </div>
+                <div class="col-9 nopadding">
+                    <h3>Biodata Pakar</h3>
+                    <table class='table table-striped mt-2'>
+                        <tr>
+                            <td>Nama</td><td>Andi Babasusalam, S.Pt.</td>
+                        </tr>
+                        <tr>
+                            <td>Tempat, Tanggal lahir</td><td>10 Oktober 1974 di Sumenep, Jawa Timur</td>
+                        </tr>
+                    </table>
+                    <p><?= substr(pakar_description,0,90) ?>... <a href="<?= base_url('site/pakar') ?>" class='text-primary'>Selengkapnya</a></p>
+                </div>
+            </div>
+            <div>
+                <h3>Galeri Kandang</h3>
+                <a href="<?= base_url('site/penyakit') ?>" class='text-primary float-end'>Selengkapnya</a>
+            </div>
             <div class="row">
                 <div class="col-md-4">
                     <img src="<?= base_url('assets/img/pakar/kandang1.jpeg') ?>" alt="" class="img-fluid">
@@ -31,12 +39,12 @@ Pada Tahun 2010, Andi babussalam diangkat di Dinas Peternakan Provinsi Jawa Timu
                 <div class="col-md-4">
                     <img src="<?= base_url('assets/img/pakar/kandang3.jpeg') ?>" alt="" class="img-fluid">
                 </div>
-                <div class="col-md-6 mt-2">
+                <!-- <div class="col-md-6 mt-2">
                     <img src="<?= base_url('assets/img/pakar/kandang4.jpeg') ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-6 mt-2">
                     <img src="<?= base_url('assets/img/pakar/kandang5.jpeg') ?>" alt="" class="img-fluid">
-                </div>
+                </div> -->
             </div>
             <h3>Tata cara penggunaan</h3>
             <ol>
