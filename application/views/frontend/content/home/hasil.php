@@ -41,7 +41,7 @@
                     <tbody>
                         <?php 
                         foreach ($data as $index => $d) {
-                            if($index < 5){
+                            if($index < 4){
                         ?>
                         <tr class='<?= $index == 0 ? 'bg-success text-white' : '' ?>'>
                             <td class='<?= $index == 0 ? ' text-white' : '' ?>'><?= $index+1 ?></td>

@@ -54,8 +54,48 @@ class Site extends CI_Controller { //mengextends CI_Controller
 			$data['input']		= $d['gejala'];
 			$this->load->view('frontend/index',$data);
 		}
-		
 	}
+    public function apiGejala(){
+        $data['data']		= $this->db->get("gejala")->result_array();
+        echo json_encode($data);
+    }
+    public function apiPenyakit(){
+        $data['data']		= $this->db->get("penyakit")->result_array();
+        echo json_encode($data);
+    }
+    public function apiDiagnosa(){
+        $d = $_POST;
+        // echo count($d['gejala']);
+		if(count($d['gejala']) < 4){
+			// echo "<script>alert('Silahkan pilih gejala minimal 4');window.history.go(-1);</script>";
+			$data['message'] = 'Silahkan pilih gejala minimal 4';
+            $data['status'] = false;
+            $data['data'] = null;
+		}else{
+			
+            $data['input']		= $d['gejala'];
+            $data['status']     = true;
+            
+            $prob               = 0;
+            $data['data']       = $this->datamodel->naive($d['gejala']);
+            $data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
+            $total              = count($data['gejala']);
+            $data['gejalaPenyakit'] = "";
+            foreach ($data['gejala'] as $nomor => $g) {
+                // echo ($nomor+1).". ".(in_array($g['id'], $data['input']) ? '<b>' : '').$g['nama'].(in_array($g['id'], $data['input']) ? '</b>' : '')."<br>";
+                $data['gejalaPenyakit'].=($nomor+1).". ".(in_array($g['id'], $data['input']) ? '' : '').$g['nama'].(in_array($g['id'], $data['input']) ? '' : '')." \n";
+                if(in_array($g['id'], $data['input'])){
+                    $prob++;
+                }
+            }
+            $data['presentase'] = number_format(($prob > 0 ? $prob / $total * 100 : 0), 2);
+            $data['probabilitas'] = $data['data'][0]['v'];
+            $data['penyakit'] = $data['data'][0]['penyakit'];
+            $data['solusi'] = str_replace(PHP_EOL, " \n", $data['data'][0]['solusi']);
+            $data['message'] = $data['data'][0]['penyakit'];
+		}
+        echo json_encode($data);
+    }
 	public function login () {
 		if(isset($_SESSION['userlevel'])){
 			redirect(base_url('dashboard'));

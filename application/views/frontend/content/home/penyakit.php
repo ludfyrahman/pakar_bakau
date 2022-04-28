@@ -49,7 +49,7 @@
                 </div>
                 <div class="col-9">
                     <h4>Caplak Unggas	</h4>
-                    <p>-</p>
+                    <p>1. Pengobatan dilakukan dengan fumigasi atau pencelupan dengan insektisida klordan 2,5 %, piretrum 10% dan na-fluorida</p>
                 </div>
             </div>
             <h3>Daftar Penyakit</h3>

@@ -25,7 +25,7 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                     <p><?= substr(pakar_description,0,90) ?>... <a href="<?= base_url('site/pakar') ?>" class='text-primary'>Selengkapnya</a></p>
                 </div>
             </div>
-            <div>
+            <div class='mt-2'>
                 <h3>Galeri Kandang</h3>
                 <a href="<?= base_url('site/penyakit') ?>" class='text-primary float-end'>Selengkapnya</a>
             </div>
@@ -45,6 +45,13 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                 <div class="col-md-6 mt-2">
                     <img src="<?= base_url('assets/img/pakar/kandang5.jpeg') ?>" alt="" class="img-fluid">
                 </div> -->
+            </div>
+            <div class='mt-2'>
+                <h3>Penyakit</h3>
+            </div>
+            <p><?= substr(penyakit_description,0,180) ?>... <a href="<?= base_url('site/penyakit') ?>" class='text-primary'>Selengkapnya</a></p>
+            <div class='mt-2'>
+                <h3>Diagnosa <a class='text-primary' href="<?= base_url('site/diagnosa') ?>">Sekarang</a></h3>
             </div>
             <h3>Tata cara penggunaan</h3>
             <ol>
