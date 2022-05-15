@@ -52,6 +52,7 @@ class Site extends CI_Controller { //mengextends CI_Controller
 			$data['content'] 	= "home/hasil";
 			$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
 			$data['input']		= $d['gejala'];
+            
 			$this->load->view('frontend/index',$data);
 		}
 	}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Apr 2022 pada 05.46
+-- Waktu pembuatan: 15 Bulan Mei 2022 pada 07.51
 -- Versi server: 8.0.28
 -- Versi PHP: 7.4.28
 
@@ -41,7 +41,11 @@ INSERT INTO `detail_riwayat` (`id`, `id_riwayat`, `id_gejala`) VALUES
 (1, 1, 54),
 (2, 1, 55),
 (3, 1, 56),
-(4, 1, 57);
+(4, 1, 57),
+(5, 2, 7),
+(6, 2, 6),
+(7, 2, 4),
+(8, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -163,24 +167,23 @@ INSERT INTO `penyakit` (`id`, `nama`, `solusi`) VALUES
 (2, 'Gumboro', '1. Vaksin\n2. Ambil gula merah sebanyak 100 gram, kunyit sebanyak 100 gram, lempuyang sebanyak 100 gram, dan air sebanyak 1liter. Campur semua bahan-bahan tersebut kemudian diblender dengan air, dan direbus hingga mendidih. Kemudian dinginkan dan saring dan jadilah jamu herbal. Jamu ini bisa dicampur dengan air bersih atau diencerkan hingga menjadi 10 liter. Berikan jamu herbal pada ayam yang terkena penyakit gumboro selama 7 hari berturut-turut. '),
 (3, 'Penyakit tetelo', '1. Vaksin\n2. Ambil daun pepaya yang sudah terlihat tua, namun belum menguning , letakkan pada wadah atau mangkok yang berisi air sebanyak 100 ml, peras daun pepaya yang sudah diberi air hingga berwarna hijau pekat, minumkan air ekstrak tersebut pada ayam sebanyak dua sendok makan atau sekitar 5 ml secara rutin tiga kali sehari, pada hari ketiga dosis dikurangi menjadi dua kali sehari.'),
 (4, 'Bronkitis menular', '1. Vaksin\n2. Pemberian obat antibiotik selama 3 sampai 5 hari '),
-(5, 'Bronkitis menular', '1. Vaksin'),
-(6, 'Sampar itik', '1. Menjaga kondisi badan tetap baik dan meningkatkan nafsu makan dengan memberikan Vita Stress. \n2. Infeksi sekunder dicegah dengan memberikan Therapy atau Doxyvet. \n3. Dapat pula diberikan pemanasan tambahan pada kandang.\n4. Mengusahakan galur ayam yang bebas EDS'),
-(7, 'Kerabang telur lembek', '1. Vaksin\n2. Gunakan kapas untuk melepaskan sumbatan pada saluran pernafasan.\n3. Berikan antibiotik seperti Neo Meditril atau Ampicol untuk mencegah infeksi sekunder, untuk membantu proses penyembuhan ayam berikan vitamin seperti Fortevit.\n4. Memisahkan ayam yang terlihat sakit agar tidak menulari ayam yang sehat. Keluarkan ayam yang mati dan kuburkan jauh dari area kandang.'),
-(8, 'Laryngotracheitis menular', '1. Vaksin belum tersedia.\n2. Diperlukan pemberantasan untuk memotong rantai penularan'),
-(9, 'Leukosit unggas', '1. Vaksin\n2. sanitasi dan ventilasi yang baik.\n3. pemusnahan bangkai yang sempurna.'),
-(10, 'Penyakit marek', '1. Pemberian chlortetracyline atau oxytetracycline pada pakan.\n2. Pemberian obat 200mg streptomycin.'),
-(11, 'Radang sendi menular', '1. Pemberian dan penyesuaian alat pemanas pada ayam.\n2. Pakan dicampur antibiotik dan vitamin yang larut dalam air.\n'),
-(12, 'Penyakit jengger biru', '1. Vaksin\n2. Peningkatan biosekuriti\n3. Pemusnahan terbatas atau selektif di daerah tertular\n4. Pengendalian lalu lintas keluar masuk unggas'),
-(13, 'Flu burung', '1. Pengobatan dengan preparat sulfa serta memberikan antibiotik seperti streptomisin, erytromisin, novobiosin, gentamisin.'),
-(14, 'Infeksi pasteura anatipestifer', '1. Pengobatan dimulai  dari memperbaiki sanitasi lingkungan, pakan, dan air.\n2. Pemberian nitrofurans atau neomisin'),
-(15, 'Kolibasilosis unggas', '1. Pengobatan dilakukan menggunakan preparat sulfa dan antibiotik'),
-(16, 'Berak kapur', '1. Pengobatan dilakukan menggunakan preparat sulfa, nitrofuran dan antibitotik.'),
-(17, 'Tipus unggas', '1. Pengobatan tidak efektif\n2. Mengeleminasi ayam yang sakit\n3. Mensanitasi lingkungan secara ketat'),
-(18, 'Tuberculosis unggas', '1. Pemberian basitrasin eritromisin, tilosin, spektinomisin dan linkomisin melalui makanan, air minum atau injeksi'),
-(19, 'Penyakit pernafasan menahun', '1. Pemberian obat sulfatiasol atau sulfadimetoksin\n2. Pemberian obat sulfametasin, sulfamerasin atau eritrimisin'),
-(20, 'Pilek ayam', '1. Pemberian obat Copper sulfate 1 gr/5 liter air minum selama 3 hari atau nistatin 100 gr/ton pakan. \n2. Pemberian vitamin konsentrasi tinggi seperti Fortevit.'),
-(21, 'Aspergillosis', '1. Pengobatan dilakukan dengan fumigasi atau pencelupan dengan insektisida klordan 2,5 %, piretrum 10% dan na-fluorida'),
-(22, 'Caplak Unggas', '-');
+(5, 'Sampar itik', '1. Vaksin'),
+(6, 'Kerabang telur lembek', '1. Menjaga kondisi badan tetap baik dan meningkatkan nafsu makan dengan memberikan Vita Stress. \n2. Infeksi sekunder dicegah dengan memberikan Therapy atau Doxyvet. \n3. Dapat pula diberikan pemanasan tambahan pada kandang.\n4. Mengusahakan galur ayam yang bebas EDS'),
+(7, 'Laryngotracheitis menular', '1. Vaksin\n2. Gunakan kapas untuk melepaskan sumbatan pada saluran pernafasan.\n3. Berikan antibiotik seperti Neo Meditril atau Ampicol untuk mencegah infeksi sekunder, untuk membantu proses penyembuhan ayam berikan vitamin seperti Fortevit.\n4. Memisahkan ayam yang terlihat sakit agar tidak menulari ayam yang sehat. Keluarkan ayam yang mati dan kuburkan jauh dari area kandang.'),
+(8, 'Leukosit unggas', '1. Vaksin belum tersedia.\n2. Diperlukan pemberantasan untuk memotong rantai penularan'),
+(9, 'Penyakit marek', '1. Vaksin\n2. sanitasi dan ventilasi yang baik.\n3. pemusnahan bangkai yang sempurna.'),
+(10, 'Radang sendi menular', '1. Pemberian chlortetracyline atau oxytetracycline pada pakan.\n2. Pemberian obat 200mg streptomycin.'),
+(11, 'Penyakit jengger biru', '1. Pemberian dan penyesuaian alat pemanas pada ayam.\n2. Pakan dicampur antibiotik dan vitamin yang larut dalam air.\n'),
+(12, 'Flu burung', '1. Vaksin\n2. Peningkatan biosekuriti\n3. Pemusnahan terbatas atau selektif di daerah tertular\n4. Pengendalian lalu lintas keluar masuk unggas'),
+(13, 'Infeksi pasteura anatipestifer', '1. Pengobatan dengan preparat sulfa serta memberikan antibiotik seperti streptomisin, erytromisin, novobiosin, gentamisin.'),
+(14, 'Kolibasilosis unggas', '1. Pengobatan dimulai  dari memperbaiki sanitasi lingkungan, pakan, dan air.\n2. Pemberian nitrofurans atau neomisin'),
+(15, 'Berak kapur', '1. Pengobatan dilakukan menggunakan preparat sulfa dan antibiotik'),
+(16, 'Tipus unggas', '1. Pengobatan dilakukan menggunakan preparat sulfa, nitrofuran dan antibitotik.'),
+(17, 'Tuberculosis unggas', '1. Pengobatan tidak efektif\n2. Mengeleminasi ayam yang sakit\n3. Mensanitasi lingkungan secara ketat'),
+(18, 'Penyakit pernafasan menahun', '1. Pemberian basitrasin eritromisin, tilosin, spektinomisin dan linkomisin melalui makanan, air minum atau injeksi'),
+(19, 'Pilek ayam', '1. Pemberian obat sulfatiasol atau sulfadimetoksin\n2. Pemberian obat sulfametasin, sulfamerasin atau eritrimisin'),
+(20, 'Aspergillosis', '1. Pemberian obat Copper sulfate 1 gr/5 liter air minum selama 3 hari atau nistatin 100 gr/ton pakan. \n2. Pemberian vitamin konsentrasi tinggi seperti Fortevit.'),
+(21, 'Caplak Unggas', '1. Pengobatan dilakukan dengan fumigasi atau pencelupan dengan insektisida klordan 2,5 %, piretrum 10% dan na-fluorida');
 
 -- --------------------------------------------------------
 
@@ -200,7 +203,8 @@ CREATE TABLE `riwayat` (
 --
 
 INSERT INTO `riwayat` (`id`, `id_penyakit`, `tanggal`, `ip`) VALUES
-(1, 15, '2022-04-04 22:43:03', '::1');
+(1, 15, '2022-04-04 22:43:03', '::1'),
+(2, 3, '2022-04-28 06:52:09', '192.168.1.4');
 
 -- --------------------------------------------------------
 
@@ -435,13 +439,13 @@ ALTER TABLE `role_penyakit`
 -- AUTO_INCREMENT untuk tabel `detail_riwayat`
 --
 ALTER TABLE `detail_riwayat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `gejala`
 --
 ALTER TABLE `gejala`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengguna`
@@ -459,7 +463,7 @@ ALTER TABLE `penyakit`
 -- AUTO_INCREMENT untuk tabel `riwayat`
 --
 ALTER TABLE `riwayat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `role_penyakit`

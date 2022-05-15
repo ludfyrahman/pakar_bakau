@@ -15,46 +15,60 @@ class datamodel extends CI_Model { //mengextands CI_Model
 	 * mencari nilai p pada penyakit dengan rumus 1 / n
 	 */
 	$p 					= 1 / $jumlah_penyakit;
-
+	// echo "Jumlah Penyakit ".$jumlah_penyakit." <br> ";
+	// echo "Jumlah Gejala ".$jumlah_gejala." <br> ";
+	// echo "PN ".$p." <br>";
 	/**
 	 * menampilkan data penyakit beserta gejala
 	 */
 	$penyakit 			= $this->db->get('penyakit')->result_array();
 
 	$data_penyakit = [];
-	foreach ($penyakit as $pe) {
+	foreach ($penyakit as $i => $pe) {
+		// echo "$i Penyakit ".$pe['nama'];
 		$gejala 		= $this->db->query("SELECT g.nama,g.id FROM role_penyakit rp JOIN gejala g ON rp.id_gejala=g.id where id_penyakit = $pe[id]")->result_array();
 		$gejalaArray	= [];
 		$jumlah			= 0;
 		$rata_rata		= 0;
 		$klasifikasi	= 1;
+		
 		foreach ($gejala as $index => $g) {
 			$gejalaArray[] = $g['id'];
 		}
-		// echo $multiplication;
+		
 		$pvj = 1 / $jumlah_gejala;
 		$ncArray = [];
 		$gejala = [];
+		// print_r($gejalaArray);
 		foreach ($data as $index => $d) {
 			$nc = 0;
 			$tf = 0;
+			
 			if(in_array($d, $gejalaArray)){
 				$tf = 1;
 			}else{
 				$tf = 0;
 			}
+			// echo " Gejala $d <b>".$tf."</b> ";
 			$nc = ($tf +$jumlah_gejala*$p ) / ( 1 + $jumlah_gejala);
 			$ncArray[] = $nc;
 		}
+		// echo " ";
+		// print_r($ncArray);
+		// echo " PVJ ".$pvj." ";
 		$ncMulti = 1;
+		// echo "<br>";
 		foreach ($ncArray as $na) {
-			$ncMulti*=$na;
+			$ncMulti=$ncMulti * $na;
+			// echo "<b>[".$ncMulti."]</b>";
 		}
+		// echo 0.003935831 * 0.000755858;
+		// echo " KLASIFIKASI ".number_format($ncMulti*$pvj, 20);
+		// echo " <br> ";
 		$data_penyakit[] = ['v' => number_format($ncMulti*$pvj, 20), 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
 	}
 	
 	$this->array_sort_by_column($data_penyakit, 'v');
-
 
 	// insert data to riwayat
 	$tanggal = date('Y-m-d H:i:s');
@@ -67,6 +81,8 @@ class datamodel extends CI_Model { //mengextands CI_Model
 			$this->db->insert('detail_riwayat', ['id_riwayat' => $id, 'id_gejala' => $d]);
 		}
 	}
+	// echo "<pre>";
+	// print_r($data_penyakit);
 	return $data_penyakit;
   }
   public function get_client_ip() {
