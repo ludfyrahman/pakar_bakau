@@ -104,7 +104,7 @@ class Pengguna extends CI_Controller {
 		
 	public function delete($id){
 		try{
-			// $this->db->delete("$this->low", ['id' => $id]);
+			$this->db->delete("$this->low", ['id' => $id]);
 			$this->session->set_flashdata("message", ['success', "Berhasil Hapus Data $this->cap", 'Berhasil']);
 			redirect(base_url("$this->low/"));
 			
