@@ -15,7 +15,7 @@
             <div class="row">
               <div class="form-group col-md-6">
                   <label>Nama</label>
-                  <input type="text" value='<?= Input_Helper::postOrOr('nama', $data['nama']) ?>' name="nama" class="form-control" placeholder="Masukkan nama anda" required>
+                  <input type="text" pattern="[a-zA-Z ]{1,}" value='<?= Input_Helper::postOrOr('nama', $data['nama']) ?>' name="nama" class="form-control" placeholder="Masukkan nama anda" required>
               </div>
               <div class="form-group col-md-6">
                     <label>Username</label>

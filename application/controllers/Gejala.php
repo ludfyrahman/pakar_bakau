@@ -80,10 +80,15 @@ class Gejala extends CI_Controller {
 				'nama' => $this->input->post('nama'), 
 				// 'bobot' => $this->input->post('bobot'), 
 			];
-			// print_r($arr);
-			$this->db->insert("$this->low",$arr);
-			$this->session->set_flashdata("message", ['success', "Berhasil Tambah $this->cap", ' Berhasil']);
-			redirect(base_url("$this->low/"));
+			$checkNama = $this->db->get_where('gejala', ['nama' => $arr['nama']])->num_rows();
+			if($checkNama>0){
+				$this->session->set_flashdata("message", ['danger', "Gejala ".$arr['nama']." sudah terpakai.", ' Berhasil']);
+			}else{
+				$this->db->insert("$this->low",$arr);
+				$this->session->set_flashdata("message", ['success', "Berhasil Tambah $this->cap", ' Berhasil']);
+				redirect(base_url("$this->low/"));
+			}
+			
 			
 		}catch(Exception $e){
 			$this->session->set_flashdata("message", ['danger', "Gagal Tambah Data $this->cap", ' Gagal']);
@@ -115,9 +120,16 @@ class Gejala extends CI_Controller {
 				'nama' => $this->input->post('nama'), 
 				// 'bobot' => $this->input->post('bobot'), 
 			];
-			$this->session->set_flashdata("message", ['success', "Ubah $this->cap Berhasil", ' Berhasil']);
-			$this->db->update("$this->low",$arr, ['id' => $id]);
-			redirect(base_url("$this->low/"));
+			$latest = $this->db->get_where('gejala', ['id' => $id])->row_array();
+			$checkNama = $this->db->get_where('gejala', ['nama' => $arr['nama']])->num_rows();
+			// print_r($arr['nama']);
+			if($checkNama > 0 && $arr['nama'] != $latest['nama']){
+				$this->session->set_flashdata("message", ['danger', "Nama Gejala ".$arr['nama'].' telah dipakai', ' Berhasil']);
+			}else{
+				$this->session->set_flashdata("message", ['success', "Ubah $this->cap Berhasil", ' Berhasil']);
+				$this->db->update("$this->low",$arr, ['id' => $id]);
+				redirect(base_url("$this->low/"));
+			}
 			
 		}catch(Exception $e){
 			$this->session->set_flashdata("message", ['danger', "Gagal Edit Data $this->cap", ' Gagal']);

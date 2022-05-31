@@ -43,15 +43,19 @@ class Pengguna extends CI_Controller {
 				'nama' => $this->input->post('nama'), 
 				'username' => $this->input->post('username'), 
 			];
+			$checkUsername = $this->db->get_where('pengguna', ['username' => $arr['username']])->num_rows();
 			if($d['password'] != $d['password_konfirmasi']){
 				$this->session->set_flashdata("message", ['danger', 'Password konfirmasi dengan password tidak sama', ' Berhasil']);
 				// return $this->add();
+			}else if($checkUsername > 0){
+				$this->session->set_flashdata("message", ['danger', 'Username telah terpakai. silahkan gunakan username lain', ' Berhasil']);
 			}else{
 				$arr['password'] = md5($d['password']);
 				$this->db->insert("$this->low",$arr);
 				$this->session->set_flashdata("message", ['success', "Berhasil Tambah $this->cap", ' Berhasil']);
 				redirect(base_url("$this->low/"));
 			}
+			// print_r($checkUsername);
 			
 		}catch(Exception $e){
 			$this->session->set_flashdata("message", ['danger', "Gagal Tambah Data $this->cap", ' Gagal']);
@@ -91,9 +95,17 @@ class Pengguna extends CI_Controller {
 					$arr['password'] = md5($d['password']);
 				}
 			}
-			$this->session->set_flashdata("message", ['success', "Ubah $this->cap Berhasil", ' Berhasil']);
-			$this->db->update("$this->low",$arr, ['id' => $id]);
-			redirect(base_url("$this->low/"));
+			$latest = $this->db->get_where('pengguna', ['id' => $id])->row_array();
+			$checkUsername = $this->db->get_where('pengguna', ['username' => $arr['username']])->num_rows();
+			// print_r($arr['nama']);
+			if($checkUsername > 0 && $arr['username'] != $latest['username']){
+				$this->session->set_flashdata("message", ['danger', "Username ".$arr['username'].' telah dipakai', ' Berhasil']);
+			}else{
+				$this->session->set_flashdata("message", ['success', "Ubah $this->cap Berhasil", ' Berhasil']);
+				$this->db->update("$this->low",$arr, ['id' => $id]);
+				redirect(base_url("$this->low/"));
+			}
+			
 			
 		}catch(Exception $e){
 			$this->session->set_flashdata("message", ['danger', "Gagal Edit Data $this->cap", ' Gagal']);
