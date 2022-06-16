@@ -74,7 +74,11 @@ class Site extends CI_Controller { //mengextends CI_Controller
 			$data['message'] = 'Silahkan pilih gejala minimal 4';
             $data['status'] = false;
             $data['data'] = null;
-		}else{
+		}else if(count($d['gejala']) > 14){
+            $data['message'] = 'Silahkan pilih gejala minimal 4 dan maksimal 14 gejala';
+            $data['status'] = false;
+            $data['data'] = null;
+        }else{
 			
             $data['input']		= $d['gejala'];
             $data['status']     = true;
