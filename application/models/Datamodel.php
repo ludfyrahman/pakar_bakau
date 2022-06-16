@@ -65,9 +65,8 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		// echo 0.003935831 * 0.000755858;
 		// echo " KLASIFIKASI ".number_format($ncMulti*$pvj, 20);
 		// echo " <br> ";
-		$data_penyakit[] = ['v' => number_format($ncMulti*$pvj, 20), 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
+		$data_penyakit[] = ['v' => $ncMulti*$pvj, 'penyakit' => $pe['nama'], 'id' => $pe['id'], 'gejala' => $gejalaArray, 'solusi' => $pe['solusi']];
 	}
-	
 	$this->array_sort_by_column($data_penyakit, 'v');
 
 	// insert data to riwayat
@@ -81,8 +80,6 @@ class datamodel extends CI_Model { //mengextands CI_Model
 			$this->db->insert('detail_riwayat', ['id_riwayat' => $id, 'id_gejala' => $d]);
 		}
 	}
-	// echo "<pre>";
-	// print_r($data_penyakit);
 	return $data_penyakit;
   }
   public function get_client_ip() {

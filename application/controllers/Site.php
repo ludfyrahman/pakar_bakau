@@ -46,7 +46,9 @@ class Site extends CI_Controller { //mengextends CI_Controller
 		if(count($d['gejala']) < 4){
 			echo "<script>alert('Silahkan pilih gejala minimal 4');window.history.go(-1);</script>";
 			// header('Location: ' . $_SERVER['HTTP_REFERER']);
-		}else{
+		}else if(count($d['gejala']) > 14){
+            echo "<script>alert('Silahkan pilih gejala maksimal 14');window.history.go(-1);</script>";
+        }else{
 			$data['data']		= $this->datamodel->naive($d['gejala']);
 			$data['title'] 		= "hasil - Sistem Pakar";
 			$data['content'] 	= "home/hasil";
