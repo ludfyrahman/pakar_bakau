@@ -1,8 +1,8 @@
 <main class="main-content mt-1 border-radius-lg">
     <div class="container mt-4">
         <!-- <div class="card p-5"> -->
-            <img src="<?= base_url('assets/img/hen.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
-            <div class="row">
+            <img src="<?= base_url('assets/img/logo.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
+            <!-- <div class="row">
                 <div class="col-3">
                     <img src="<?= base_url('assets/img/penyakit1.jpeg') ?>" class='img-fluid' alt="">
                 </div>
@@ -51,7 +51,7 @@
                     <h4>Caplak Unggas	</h4>
                     <p>1. Pengobatan dilakukan dengan fumigasi atau pencelupan dengan insektisida klordan 2,5 %, piretrum 10% dan na-fluorida</p>
                 </div>
-            </div>
+            </div> -->
             <h3>Daftar Penyakit</h3>
             <form action="<?= base_url('site/hasil') ?>" method="post">
                <div class="table-responsive">
@@ -66,7 +66,6 @@
                         <?php } ?>
                     </table>
                </div>
-                <!-- <button class="btn btn-primary" type="submit">Proses</button> -->
             </form>
         <!-- </div> -->
     </div>

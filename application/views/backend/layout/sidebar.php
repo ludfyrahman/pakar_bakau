@@ -33,7 +33,7 @@
             <span class="nav-link-text ms-1">Penyakit</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link " href="<?= base_url('gejala') ?>">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
@@ -48,7 +48,7 @@
             </div>
             <span class="nav-link-text ms-1">Riwayat</span>
           </a>
-        </li>
+        </li> -->
        
       </ul>
     </div>
@@ -57,7 +57,7 @@
         <img class="w-50 mx-auto" src="<?= base_url() ?>assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
         <div class="card-body text-center p-3 w-100 pt-0">
           <div class="docs-info">
-            <h6 class="mb-0">Sistem Pakar Penyakit ayam</h6>
+            <h6 class="mb-0">Sistem Pakar penyakit Tembakau</h6>
             <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
           </div>
         </div>

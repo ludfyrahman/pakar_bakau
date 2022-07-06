@@ -6,11 +6,17 @@ class Site extends CI_Controller { //mengextends CI_Controller
         // error_reporting(0);
     }
     public function index () {
-		if(isset($_SESSION['userlevel'])){
+		// if(isset($_SESSION['userlevel'])){
+		// 	redirect(base_url('dashboard'));
+		// }
+        // $data['title'] = "Sistem Pakar penyakit Tembakau ";
+        // $data['content'] = "home/index";
+		// $this->load->view('frontend/index',$data);
+        if(isset($_SESSION['userlevel'])){
 			redirect(base_url('dashboard'));
 		}
-        $data['title'] = "Sistem Pakar penyakit ayam ";
-        $data['content'] = "home/index";
+        $data['title'] = "Login";
+        $data['content'] = "login/index";
 		$this->load->view('frontend/index',$data);
     }
 	public function diagnosa(){

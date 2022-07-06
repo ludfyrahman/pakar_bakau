@@ -1,7 +1,7 @@
 <main class="main-content mt-1 border-radius-lg">
     <div class="container mt-4">
         <!-- <div class="card p-5"> -->
-            <img src="<?= base_url('assets/img/pakar/pakar.jpeg') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
+            <!-- <img src="<?= base_url('assets/img/pakar/pakar.jpeg') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
             <h3>Biodata Pakar</h3>
             <table class='table table-striped mt-2'>
                 <tr>
@@ -32,7 +32,7 @@
                 <div class="col-md-6 mt-2">
                     <img src="<?= base_url('assets/img/pakar/kandang5.jpeg') ?>" alt="" class="img-fluid">
                 </div>
-            </div>
+            </div> -->
             
         <!-- </div> -->
     </div>

@@ -1,7 +1,7 @@
 <main class="main-content mt-1 border-radius-lg">
     <div class="container mt-4">
         <div class=" p-5">
-            <img src="<?= base_url('assets/img/hen.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
+            <img src="<?= base_url('assets/img/logo.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
             <i>Hasil penyakit yang ditampilkan sesuai dengan gejala yang dipilih</i>
             <div class="table-responsive">
                 <table class="table table-striped mt-4">

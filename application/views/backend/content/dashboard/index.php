@@ -127,7 +127,7 @@
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                       <i class="ni ni-camera-compact text-dark opacity-10"></i>
                     </div>
-                    <h5 class="text-white mb-1">Sistem Pakar penyakit ayam</h5>
+                    <h5 class="text-white mb-1">Sistem Pakar penyakit Tembakau</h5>
                     <p>Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
 pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
 performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
@@ -141,7 +141,7 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                       <i class="ni ni-bulb-61 text-dark opacity-10"></i>
                     </div>
-                    <h5 class="text-white mb-1">Sistem Pakar penyakit ayam</h5>
+                    <h5 class="text-white mb-1">Sistem Pakar penyakit Tembakau</h5>
                     <p>Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
 pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
 performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
@@ -155,7 +155,7 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                       <i class="ni ni-trophy text-dark opacity-10"></i>
                     </div>
-                    <h5 class="text-white mb-1">Sistem Pakar penyakit ayam</h5>
+                    <h5 class="text-white mb-1">Sistem Pakar penyakit Tembakau</h5>
                     <p>Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
 pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
 performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
@@ -184,7 +184,7 @@ khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
                 © <script>
                   document.write(new Date().getFullYear())
                 </script>,
-                made with <i class="fa fa-heart"></i> by aklil
+                made with <i class="fa fa-heart"></i> by Ansori
                 <!-- <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a> -->
                 <!-- for a better web. -->
               </div>

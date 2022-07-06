@@ -32,10 +32,10 @@
               </div>
             </div>
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/signin-ill.jpg');
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url('https://media.suara.com/pictures/653x366/2017/07/11/94278-tanaman-tembakau-shutterstock.jpg');
           background-size: cover;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
-                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Sistem Pakar penyakit ayam"</h4>
+                <h4 class="mt-5 text-white font-weight-bolder position-relative">"Sistem Pakar penyakit Tembakau"</h4>
                 <p class="text-white position-relative">Sistem pakar adalah usaha yang menirukan seorang pakar. Biasanya sistem
 pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
 performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
