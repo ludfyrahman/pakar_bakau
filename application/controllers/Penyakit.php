@@ -52,30 +52,43 @@ class Penyakit extends CI_Controller {
 				$highestColumn = $worksheet->getHighestColumn();
 	
 				for($row=2; $row<=$highestRow; $row++){
-	
 					$nama = $worksheet->getCellByColumnAndRow(1, $row)->getValue();
 					$solusi = $worksheet->getCellByColumnAndRow(2, $row)->getValue();
-					// $ge = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
-					// $g = str_replace('G', '', $ge);
-					// $gejala = array_map('intval', explode(', ', $g));;
-					$data[] = array(
-						'nama'          => $nama,
-						'solusi'          =>$solusi,
-						// 'gejala' => $gejala
-					);
-					// foreach ($gejala as $gg) {
-					// 	$dataRole = [
-					// 		'id_penyakit' => $row-1,
-					// 		'id_gejala' => $gg
-					// 	];
-					// 	$this->db->insert('role_penyakit', $dataRole);
-					// }
+					if($nama!=''){
+						$mdCol = $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+						$mbCol = $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+						$md = str_replace(' ','',$mdCol);
+						$md = explode(',', $mdCol);
+
+						$mb = str_replace(' ','',$mbCol);
+						$mb = explode(',', $mbCol);
+						$ge = $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+						$g = str_replace('G', '', $ge);
+						$g = str_replace(' ','',$g);
+						$gejala = array_map('intval', explode(',', $g));;
+						$data[] = array(
+							'nama'      => $nama,
+							'solusi'    => $solusi,
+							// 'gejala' 	=> $gejala,
+							// 'md' 		=> ($md =='' ? 0 : $md),
+							// 'mb' 		=> ($mb == '' ? 0 : $mb)
+						);
+						foreach ($gejala as $index => $gg) {
+							$dataRole = [
+								'id_penyakit'	=> $row-1,
+								'id_gejala'  	=> $gg,
+								'md'			=> $md[$index],
+								'mb'			=> $mb[$index],
+							];
+							$this->db->insert('role_penyakit', $dataRole);
+						}
+					}
 	
 				} 
 	
 			}
 			// echo "<pre>";
-			// print_r($data);
+			// print_r($dataRole);
 			$this->db->insert_batch($this->low, $data);
 			$this->session->set_flashdata("message", ['success', "Import file excel berhasil disimpan di database", ' Berhasil']);
 			redirect(base_url($this->low));

@@ -15,7 +15,7 @@
                 <div class="col-9">
                     <h4>Penyakit tetelo</h4>
                     <p>1. Vaksin <br>
-                        2. Ambil daun pepaya yang sudah terlihat tua, namun belum menguning , letakkan pada wadah atau mangkok yang berisi air sebanyak 100 ml, peras daun pepaya yang sudah diberi air hingga berwarna hijau pekat, minumkan air ekstrak tersebut pada ayam sebanyak dua sendok makan atau sekitar 5 ml secara rutin tiga kali sehari, pada hari ketiga dosis dikurangi menjadi dua kali sehari.</p>
+                        2. Ambil daun pepaya yang sudah terlihat tua, namun belum menguning , letakkan pada wadah atau mangkok yang berisi air sebanyak 100 ml, peras daun pepaya yang sudah diberi air hingga berwarna hijau pekat, minumkan air ekstrak tersebut pada tembakau sebanyak dua sendok makan atau sekitar 5 ml secara rutin tiga kali sehari, pada hari ketiga dosis dikurangi menjadi dua kali sehari.</p>
                 </div>
                 <div class="col-3">
                     <img src="<?= base_url('assets/img/penyakit2.jpeg') ?>" class='img-fluid' alt="">
@@ -36,8 +36,8 @@
                     <h4>Kerabang telur lembek	</h4>
                     <p>1. Vaksin<br>
                     2. Gunakan kapas untuk melepaskan sumbatan pada saluran pernafasan.<br>
-                    3. Berikan antibiotik seperti Neo Meditril atau Ampicol untuk mencegah infeksi sekunder, untuk membantu proses penyembuhan ayam berikan vitamin seperti Fortevit.<br>
-                    4. Memisahkan ayam yang terlihat sakit agar tidak menulari ayam yang sehat. Keluarkan ayam yang mati dan kuburkan jauh dari area kandang.<br></p>
+                    3. Berikan antibiotik seperti Neo Meditril atau Ampicol untuk mencegah infeksi sekunder, untuk membantu proses penyembuhan tembakau berikan vitamin seperti Fortevit.<br>
+                    4. Memisahkan tembakau yang terlihat sakit agar tidak menulari tembakau yang sehat. Keluarkan tembakau yang mati dan kuburkan jauh dari area kandang.<br></p>
                 </div>
                 <div class="col-3">
                     <img src="<?= base_url('assets/img/penyakit4.jpeg') ?>" class='img-fluid' alt="">

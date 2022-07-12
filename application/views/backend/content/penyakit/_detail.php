@@ -38,7 +38,19 @@
                           <p class="text-xs font-weight-bold mb-0"><?= $d['bobot'] ?></p>
                         </td> -->
                         <td>
-                          <input type="checkbox" name="gejala[]" <?= in_array($d['id'], $gejala) ? 'checked' : '' ?> id="" value="<?= $d['id'] ?>">
+                          <div class="row">
+                            <div class="col-2">
+                            <input type="checkbox" name="gejala[]" <?= in_array($d['id'], $gejala) ? 'checked' : '' ?> id="" value="<?= $d['id'] ?>">
+                            </div>
+                            <div class="form-group col-4">
+                                  <!-- <label>MD</label> -->
+                                  <input  type="number" value='<?= Input_Helper::postOrOr('md', isset($data['md']) ? $data['md'] : '') ?>' name="md[]" class="form-control" placeholder="Masukkan md gejala" required>
+                              </div>
+                              <div class="form-group col-4">
+                                  <!-- <label>MB</label> -->
+                                  <input  type="number" value='<?= Input_Helper::postOrOr('mb', isset($data['mb']) ? $data['mb'] : '') ?>' name="mb[]" class="form-control" placeholder="Masukkan mb gejala" required>
+                              </div>
+                          </div>
                         </td>
                       </tr>
                       <?php $no++;} ?>

@@ -2,7 +2,7 @@
     <div class="container mt-4">
         <!-- <div class="card p-5"> -->
             <img src="<?= base_url('assets/img/logo.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
-            <i>Silahkan pilih gejala sesuai kondisi  yang ditemukan pada ayam anda</i>
+            <i>Silahkan pilih gejala sesuai kondisi  yang ditemukan pada tembakau anda</i>
             <form action="<?= base_url('site/hasil') ?>" method="post">
                <div class="table-responsive">
                <table class=" table-striped mt-4">

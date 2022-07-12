@@ -49,19 +49,22 @@ class Site extends CI_Controller { //mengextends CI_Controller
 	}
 	public function hasil(){
 		$d = $_POST;
-		if(count($d['gejala']) < 4){
+        $gejala = array_filter($d['gejala']);
+		if(count($gejala) < 4){
 			echo "<script>alert('Silahkan pilih gejala minimal 4');window.history.go(-1);</script>";
 			// header('Location: ' . $_SERVER['HTTP_REFERER']);
-		}else if(count($d['gejala']) > 14){
+		}else if(count($gejala) > 14){
             echo "<script>alert('Silahkan pilih gejala maksimal 14');window.history.go(-1);</script>";
         }else{
-			$data['data']		= $this->datamodel->naive($d['gejala']);
+			$data['data']		= $this->datamodel->penghitungan($gejala);
 			$data['title'] 		= "hasil - Sistem Pakar";
 			$data['content'] 	= "home/hasil";
-			$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][0]['id']])->get('role_penyakit')->result_array();
+			$data['gejala'] 	= $this->db->select('gejala.nama,gejala.id')->join('gejala', 'gejala.id = role_penyakit.id_gejala')->where(['role_penyakit.id_penyakit' => $data['data'][8]['id']])->get('role_penyakit')->result_array();
 			$data['input']		= $d['gejala'];
             
 			$this->load->view('frontend/index',$data);
+            // echo "<pre>";
+            // print_r($data);
 		}
 	}
     public function apiGejala(){

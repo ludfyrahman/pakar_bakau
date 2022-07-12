@@ -15,4 +15,7 @@ class Response_helper
 	public static function url_base(){
 		return base_url();
 	}
+	public static function code($no, $code){
+		return (strlen($no) > 1 ? $code.'0' : $code.'00').$no;
+	}
 }

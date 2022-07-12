@@ -15,13 +15,13 @@
             <div class="row">
               <div class="form-group col-md-12">
                   <label>Nama</label>
-                  <input pattern="[a-zA-Z ]{1,}" type="text" value='<?= Input_Helper::postOrOr('nama', isset($data['nama']) ? $data['nama'] : '') ?>' name="nama" class="form-control" placeholder="Masukkan nama gejala" required>
-              </div>
-              <div class="form-group col-md-12">
-                  <label>Solusi</label>
-                  <textarea pattern="[a-zA-Z ]{1,}" name="solusi" rows='5'  class="form-control" placeholder="Masukkan solusi" required><?= Input_Helper::postOrOr('solusi', isset($data['solusi']) ? $data['solusi'] : '') ?></textarea>
+                  <input  type="text" value='<?= Input_Helper::postOrOr('nama', isset($data['nama']) ? $data['nama'] : '') ?>' name="nama" class="form-control" placeholder="Masukkan nama gejala" required>
               </div>
               
+              <div class="form-group col-md-12">
+                  <label>Solusi</label>
+                  <textarea  name="solusi" rows='5'  class="form-control" placeholder="Masukkan solusi" required><?= Input_Helper::postOrOr('solusi', isset($data['solusi']) ? $data['solusi'] : '') ?></textarea>
+              </div>
               <div class="col-md-12">
                 <button class="btn btn-primary"><?= $type ?></button>
               </div>

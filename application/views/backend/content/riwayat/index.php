@@ -34,7 +34,7 @@
                         <p class="text-xs font-weight-bold mb-0"><?= $d['penyakit'] ?></p>
                       </td>
                      <td>
-                        <p class="text-xs font-weight-bold mb-0"><?= $d['gejala'] ?></p>
+                        <p class="text-xs font-weight-bold mb-0"><?= str_replace(',',',<br>', $d['gejala']) ?></p>
                       </td>
                       
                     </tr>

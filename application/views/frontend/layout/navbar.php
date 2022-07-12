@@ -29,7 +29,7 @@
                 <span class="d-sm-inline d-none">Penyakit</span>
               </a>
             </li>
-            <!-- <li class="nav-item d-flex align-items-center">
+            <li class="nav-item d-flex align-items-center">
               <a href="<?= base_url('site/pakar') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
                 <span class="d-sm-inline d-none">Pakar</span>
               </a>
@@ -43,7 +43,7 @@
               <a href="<?= base_url('site/diagnosa') ?>" class="nav-link text-white me-2 font-weight-bold px-0">
                 <span class="d-sm-inline d-none">Diagnosa</span>
               </a>
-            </li> -->
+            </li>
             <li class="nav-item d-flex align-items-center">
               <a href="<?= base_url('site/login') ?>" class="nav-link text-white font-weight-bold px-0">
                 <!-- <i class="fa fa-user me-sm-1"></i> -->
