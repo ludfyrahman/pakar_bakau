@@ -8,43 +8,22 @@ pakar berupa perangkat lunak pengambil keputusan yang mampu mencapai tingkat
 performa yang sebanding dengan seorang pakar dalam bidang masalah yang yang
 khusus dan sempit. Ide dasarnya adalah kepakaran ditransfer dari seorang pakar
 (atau sumber kepakaran yang lain) ke komputer.</p>
-            <div class="row">
-                <div class="col-3 nopadding m-auto">
-                    <img src="<?= base_url('assets/img/pakar/pakar.jpeg') ?>" style='width:180px' class='m-auto' alt="">
-                </div>
-                <div class="col-9 nopadding">
-                    <h3>Biodata Pakar</h3>
-                    <table class='table table-striped mt-2'>
-                        <tr>
-                            <td>Nama</td><td>Andi Babasusalam, S.Pt.</td>
-                        </tr>
-                        <tr>
-                            <td>Tempat, Tanggal lahir</td><td>10 Oktober 1974 di Sumenep, Jawa Timur</td>
-                        </tr>
-                    </table>
-                    <p><?= substr(pakar_description,0,90) ?>... <a href="<?= base_url('site/pakar') ?>" class='text-primary'>Selengkapnya</a></p>
-                </div>
-            </div>
+            
             <div class='mt-2'>
-                <h3>Galeri Kandang</h3>
+                <h3>Galeri Penyakit</h3>
                 <a href="<?= base_url('site/penyakit') ?>" class='text-primary float-end'>Selengkapnya</a>
             </div>
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-4">
-                    <img src="<?= base_url('assets/img/pakar/kandang1.jpeg') ?>" alt="" class="img-fluid">
-                </div>
-                <div class="col-md-4">
-                    <img src="<?= base_url('assets/img/pakar/kandang2.jpeg') ?>" alt="" class="img-fluid">
+                    <img src="<?= base_url('assets/img/wereng.jpeg') ?>" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-4">
-                    <img src="<?= base_url('assets/img/pakar/kandang3.jpeg') ?>" alt="" class="img-fluid">
+                    <img src="<?= base_url('assets/img/grayak.jpeg') ?>" alt="" class="img-fluid">
                 </div>
-                <!-- <div class="col-md-6 mt-2">
-                    <img src="<?= base_url('assets/img/pakar/kandang4.jpeg') ?>" alt="" class="img-fluid">
+                <div class="col-md-4">
+                    <img src="<?= base_url('assets/img/kutu.jpeg') ?>" alt="" class="img-fluid">
                 </div>
-                <div class="col-md-6 mt-2">
-                    <img src="<?= base_url('assets/img/pakar/kandang5.jpeg') ?>" alt="" class="img-fluid">
-                </div> -->
+                
             </div>
             <div class='mt-2'>
                 <h3>Penyakit</h3>

@@ -137,10 +137,12 @@ class Penyakit extends CI_Controller {
 		$data['type'] = 'Detail';
 		$data['id'] = $id;
 		$data['data'] = $this->db->get('gejala')->result_array();
-		$gejala = $this->db->query("SELECT g.id FROM role_penyakit rp JOIN penyakit p ON rp.id_penyakit=p.id JOIN gejala g ON rp.id_gejala=g.id WHERE rp.id_penyakit='$id'")->result_array();		
+		$gejala = $this->db->query("SELECT g.id, rp.md,rp.mb FROM role_penyakit rp JOIN penyakit p ON rp.id_penyakit=p.id JOIN gejala g ON rp.id_gejala=g.id WHERE rp.id_penyakit='$id'")->result_array();		
 		$data['gejala'] = [];
+		$data['bobot'] = [];
 		foreach ($gejala as $g) {
 			$data['gejala'][] = $g['id'];
+			$data['bobot'][$g['id']] = ['md' => $g['md'], 'mb' => $g['mb']];
 		}
 		$this->load->view('backend/index',$data);
 	}

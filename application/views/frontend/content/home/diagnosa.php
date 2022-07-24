@@ -1,6 +1,6 @@
 <main class="main-content mt-1 border-radius-lg">
     <div class="container mt-4">
-        <div class="card p-5">
+        <div class="card p-4">
             <img src="<?= base_url('assets/img/logo.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
             <i>Silahkan pilih gejala sesuai kondisi  yang ditemukan pada tembakau anda. sesuai dengan table dibawah ini.</i>
             <table class="table">
@@ -15,7 +15,7 @@
                     ?>
                     <tr>
                         <td><?= ($no+1) ?></td>
-                        <td><?= $b ?></td>
+                        <td ><?= $b ?></td>
                         <td><?= BOBOT_CF[$no] ?></td>
                     </tr>
                     <?php } ?>
@@ -25,11 +25,12 @@
                <div class="table-responsive">
                <table class="table table-striped mt-4">
                     <tr>
-                        <th>Kode</th><th>Nama Gejala</th><th>Pilih kondisi</th>
+                        <th>Kode</th><th >Nama Gejala</th><th>Pilih kondisi</th>
                     </tr>
                     <?php $no = 1;foreach ($data as $index => $g) {?>
                     <tr>
-                        <td><?= (strlen($no) > 1 ? 'G0' : 'G00').$no ?></td><td><?= $g['nama'] ?></td>
+                        <td><?= (strlen($no) > 1 ? 'G0' : 'G00').$no ?></td>
+                        <td ><?= $g['nama'] ?></td>
                         <td>
                             <!-- <input type="checkbox" value='<?= $g['id'] ?>' name="gejala[]" id=""> -->
                             <select name="gejala[]" id="" class="form-control">

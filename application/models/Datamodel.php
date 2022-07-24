@@ -100,11 +100,12 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		if(count($bb) > 1){
 			$ruleNilai = 0;
 			for ($i=0; $i < count($bb); $i++) { 
-				$nilai = ($i == 0 ? $bb[$i] : $ruleNilai ) + $bb[(($i+1) < count($bb) ?? ($i+1))] *  ( 1 - $bb[$i]);
+				$nilai = ($i == 0 ? $bb[$i] : $ruleNilai ) + $bb[(($i+1) < count($bb) ?? ($i+1))] *  ( 1 - ($i == 0 ? $bb[$i] : $ruleNilai ));
+				$ruleNilaiResult.= ($i == 0 ? $bb[$i] : $ruleNilai ) ." + ". $bb[(($i+1) < count($bb) ?? ($i+1))] ." x ( 1 - ". ($i == 0 ? $bb[$i] : $ruleNilai ).") = <b>$nilai%</b><br>";
 				$ruleNilai = $nilai;
-				$ruleNilaiResult.= ($i == 0 ? $bb[$i] : $ruleNilai ) ." + ". $bb[(($i+1) < count($bb) ?? ($i+1))] ." x ( 1 - ". $bb[$i].") = <b>$nilai%</b><br>";
 			}
 			$presentase = $ruleNilai * 100;
+			$ruleNilaiResult.= $ruleNilai ." x 100 ". " = <b>$presentase%</b><br>";
 			$bobotRule[] = $presentase;
 			
 		}else{

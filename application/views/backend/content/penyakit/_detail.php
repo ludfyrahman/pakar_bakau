@@ -5,7 +5,7 @@
             <div class="card mb-4">
               <div class="card-header pb-0">
                 <h6>Data <?= $title ?></h6>
-                <button class="btn btn-primary btn-sm ms-auto float-end" type="submit">Simpan</button>
+                <!-- <button class="btn btn-primary btn-sm ms-auto float-end" type="submit">Simpan</button> -->
 
               </div>
               <div class="card-body px-0 pt-0 pb-2">
@@ -40,15 +40,15 @@
                         <td>
                           <div class="row">
                             <div class="col-2">
-                            <input type="checkbox" name="gejala[]" <?= in_array($d['id'], $gejala) ? 'checked' : '' ?> id="" value="<?= $d['id'] ?>">
+                            <!-- <input type="checkbox" name="gejala[]" <?= in_array($d['id'], $gejala) ? 'checked' : '' ?> id="" value="<?= $d['id'] ?>"> -->
                             </div>
                             <div class="form-group col-4">
                                   <!-- <label>MD</label> -->
-                                  <input  type="number" value='<?= Input_Helper::postOrOr('md', isset($data['md']) ? $data['md'] : '') ?>' name="md[]" class="form-control" placeholder="Masukkan md gejala" required>
+                                  <input  type="number" value='<?= Input_Helper::postOrOr('md', in_array($d['id'], $gejala) ? $bobot[$d['id']]['md'] : '') ?>' name="md[]" class="form-control" placeholder="Masukkan md gejala" required>
                               </div>
                               <div class="form-group col-4">
                                   <!-- <label>MB</label> -->
-                                  <input  type="number" value='<?= Input_Helper::postOrOr('mb', isset($data['mb']) ? $data['mb'] : '') ?>' name="mb[]" class="form-control" placeholder="Masukkan mb gejala" required>
+                                  <input  type="number" value='<?= Input_Helper::postOrOr('mb', in_array($d['id'], $gejala) ? $bobot[$d['id']]['mb'] : '') ?>' name="mb[]" class="form-control" placeholder="Masukkan mb gejala" required>
                               </div>
                           </div>
                         </td>

@@ -21,7 +21,7 @@ class Riwayat extends CI_Controller {
     public function index(){
 		$data['title'] = "Data $this->cap";
 		$data['content'] = "$this->low/index";
-		$data['data'] = $this->db->query("SELECT GROUP_CONCAT(g.nama separator ',') gejala, p.nama as penyakit, r.tanggal, r.ip FROM riwayat r JOIN detail_riwayat dr ON r.id=dr.id_riwayat JOIN penyakit p ON r.id_penyakit=p.id JOIN gejala g ON dr.id_gejala=g.id GROUP BY dr.id_riwayat")->result_array();
+		$data['data'] = $this->db->query("SELECT GROUP_CONCAT(g.nama separator ',') gejala, p.nama as penyakit, r.tanggal, r.ip FROM riwayat r JOIN detail_riwayat dr ON r.id=dr.id_riwayat JOIN penyakit p ON r.id_penyakit=p.id JOIN gejala g ON dr.id_gejala=g.id GROUP BY dr.id_riwayat order by r.id desc")->result_array();
         // echo "<pre>";
 		// print_r($data);
 		$this->load->view('backend/index',$data);
