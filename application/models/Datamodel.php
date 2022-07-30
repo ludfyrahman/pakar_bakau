@@ -100,8 +100,8 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		if(count($bb) > 1){
 			$ruleNilai = 0;
 			for ($i=0; $i < count($bb); $i++) { 
-				$nilai = ($i == 0 ? $bb[$i] : $ruleNilai ) + $bb[(($i+1) < count($bb) ?? ($i+1))] *  ( 1 - ($i == 0 ? $bb[$i] : $ruleNilai ));
-				$ruleNilaiResult.= ($i == 0 ? $bb[$i] : $ruleNilai ) ." + ". $bb[(($i+1) < count($bb) ?? ($i+1))] ." x ( 1 - ". ($i == 0 ? $bb[$i] : $ruleNilai ).") = <b>$nilai%</b><br>";
+				$nilai = ($i == 0 ? $bb[$i] : $ruleNilai ) + $bb[(($i+1) < count($bb) ? ($i+1) : ($jumlah-1))] *  ( 1 - ($i == 0 ? $bb[$i] : $ruleNilai ));
+				$ruleNilaiResult.= ($i == 0 ? $bb[$i] : $ruleNilai ) ." + ". $bb[(($i+1) < count($bb) ? ($i+1) : ($jumlah-1))] ." x ( 1 - ". ($i == 0 ? $bb[$i] : $ruleNilai ).") = <b>$nilai%</b><br>";
 				$ruleNilai = $nilai;
 			}
 			$presentase = $ruleNilai * 100;
