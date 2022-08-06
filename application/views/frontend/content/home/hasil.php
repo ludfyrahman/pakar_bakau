@@ -4,6 +4,7 @@
             <img src="<?= base_url('assets/img/logo.png') ?>" class='rounded mx-auto d-block' style="width:300px" alt="">
             <i>Hasil penyakit yang ditampilkan sesuai dengan gejala yang dipilih</i>
             <div class="table-responsive">
+                <h2><i>Forward Chaining</i></h2>
                 <h4>Gejala yang dipilih</h4>
                 <table class="table">
                     <thead>
@@ -55,6 +56,7 @@
                         <?php } ?>
                     </tbody>
                 </table>
+                <h2><i>Certainly Factor</i></h2>
                 <h4>Rule dengan perkalian Cf Pakar</h4>
                 <table class="table">
                     <thead>

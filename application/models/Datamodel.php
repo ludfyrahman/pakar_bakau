@@ -98,6 +98,7 @@ class datamodel extends CI_Model { //mengextands CI_Model
 		 */
 		$ruleNilaiResult = '';
 		if(count($bb) > 1){
+			$jumlah = count($bb);
 			$ruleNilai = 0;
 			for ($i=0; $i < count($bb); $i++) { 
 				$nilai = ($i == 0 ? $bb[$i] : $ruleNilai ) + $bb[(($i+1) < count($bb) ? ($i+1) : ($jumlah-1))] *  ( 1 - ($i == 0 ? $bb[$i] : $ruleNilai ));
