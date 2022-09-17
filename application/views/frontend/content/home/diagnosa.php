@@ -32,15 +32,12 @@
                         <td><?= (strlen($no) > 1 ? 'G0' : 'G00').$no ?></td>
                         <td ><?= $g['nama'] ?></td>
                         <td>
-                            <!-- <input type="checkbox" value='<?= $g['id'] ?>' name="gejala[]" id=""> -->
-                            <select name="gejala[]" id="" class="form-control">
-                                <option value="">Pilih Bobot</option>
-                                <?php 
-                                foreach (BOBOT_DESC as $index=> $b) {
-                                ?>
-                                <option value="<?= BOBOT_CF[$index].','.$g['id'] ?>">[<?= BOBOT_CF[$index] ?>]<?= $b ?></option>
-                                <?php } ?>
-                            </select>
+                            <?php 
+                                foreach (BOBOT_DESC as $indexR=> $b) {
+                            ?>
+                            <input type="radio" name="gejala[<?= $index ?>]" value="<?= BOBOT_CF[$indexR].','.$g['id'] ?>">  <?= $b ?>[<?= BOBOT_CF[$indexR] ?>]
+                            <?php } ?>
+                            
                         </td>
                     </tr>
                     <?php $no++;} ?>
